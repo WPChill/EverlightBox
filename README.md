@@ -1,4 +1,6 @@
 # EverlightBox
+
+[![Join the chat at https://gitter.im/EverlightBox/Features](https://badges.gitter.im/EverlightBox/Features.svg)](https://gitter.im/EverlightBox/Features?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 WordPress lightbox gallery with social attitude
 
 
