@@ -1,0 +1,99 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+h1 {
+    font-size: 23px;
+    font-weight: 400;
+    margin: 0;
+    padding: 9px 15px 4px 0;
+    line-height: 29px;
+}
+.cmb2-wrap {
+	background: #fafafa;
+	padding: 10px 20px;
+	border: 1px solid #ccc;
+	width: auto;
+	margin-bottom: 20px !important;
+}
+.cmb2-wrap .cmb-row {
+    border-bottom:1px solid #fff;
+}
+.cmb-th {
+    padding-top: 12px;
+}
+.cmb-row {
+	display: none;
+}
+.cmb-row.el-tab-1 {
+	display: block;
+}
+#everlightbox_options {
+	margin-top:20px;
+}
+#el-tabs {
+	
+}
+#el-tabs a {
+	display: inline-block;
+	padding: 10px 20px;
+	margin-right: 6px;
+	border: 1px solid #ccc;
+	color: #333;
+	cursor: pointer;
+	position: relative;
+	top:1px;
+	background: #eee;
+}
+#el-tabs a:hover,
+#el-tabs a.active {
+	background: #fafafa;
+}
+#el-tabs a.active {
+	border-bottom-color: #fafafa;
+}
+.el-footer {
+	text-align: center;
+	font-style: italic;
+	margin-top: 20px;
+}
+.el-footer a {
+	font-weight: bold;
+}
+#greentreelabs-plugins .gtl-item {
+	border: 1px solid #ccc;
+	margin: 5px 5px 40px;	
+	height: 128px;	
+}
+#greentreelabs-plugins .gtl-item img {
+	display: inline-block;
+	margin-right: 10px;	
+}
+#greentreelabs-plugins .gtl-item .text {
+	max-width:580px;
+	display: inline-block;
+	vertical-align: top;
+}
+#greentreelabs-plugins .gtl-item h3 {
+	margin:10px 0;
+}
+#greentreelabs-plugins .gtl-item .button {
+	display: inline-block;
+	padding-top: 6px 10px;
+	background: #62d151;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	font-style: 18px;
+	border:1px solid #42a131;
+	border-radius: 4px;
+}
+@media all and (max-width: 1000px) {
+	#greentreelabs-plugins .gtl-item {
+		height: auto;
+		padding: 10px;
+	}
+	#greentreelabs-plugins .gtl-item img {
+		margin:10px auto;
+	}
+}
