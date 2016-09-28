@@ -36,3 +36,7 @@ There are many ways to contribute to EverlightBox.
 * Engage with other EverlightBox users and developers on [StackOverflow](http://stackoverflow.com/questions/tagged/everlightbox). 
 * Join the [#everlightbox](http://twitter.com/#!/search/realtime/%23everlightbox) discussion on Twitter.
 * Contribute bug fixes.
+
+## Author
+
+EverlightBox is developed by Diego Imbriani - [GreenTreeLabs](http://www.greentreelabs.net)
