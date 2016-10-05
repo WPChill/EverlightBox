@@ -3,7 +3,7 @@
 WordPress lightbox gallery with social attitude
 
 [![Join the chat at https://gitter.im/EverlightBox/Features](https://badges.gitter.im/EverlightBox/Features.svg)](https://gitter.im/EverlightBox/Features?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6a939df5f4e4464ea6f55348ffe76169)](https://www.codacy.com/app/diego_8/EverlightBox?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GreenTreeLabs/EverlightBox&amp;utm_campaign=Badge_Grade)
 
 EverlightBox has a very **social attitude**: users can share the image they're *currently* seeing and they can even write comments thanks to the Facebook comments widget.
 
