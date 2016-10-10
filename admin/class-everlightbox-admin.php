@@ -100,7 +100,7 @@ class Everlightbox_Admin {
 
 		$update = false;
 		foreach($this->default_values as $k => $v) {
-			if (!array_key_exists($k, $newvalues)) {
+			if (!array_key_exists($k, $newvalues) && $v != 'on') {
 				$newvalues[ $k ] = $v;
 				$update = true;
 			}

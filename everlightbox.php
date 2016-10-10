@@ -16,7 +16,7 @@
  * Plugin Name:       EverlightBox
  * Plugin URI:        everlightbox
  * Description:       Light and stylish lightbox for WordPress
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            GreenTreeLabs
  * Author URI:        http://www.greentreelabs.net
  * License:           GPL-2.0+

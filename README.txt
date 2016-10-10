@@ -79,6 +79,9 @@ Yes, you can do it when you share the image on Facebook, Pinterest and Houzz. Th
 
 == Changelog ==
 
+= 1.0.2 =
+* [Fix] Lost settings after page refresh
+
 = 1.0.1 =
 * When available, use data-title instead of title attribute to get the image caption
 
@@ -86,6 +89,9 @@ Yes, you can do it when you share the image on Facebook, Pinterest and Houzz. Th
 * First release!
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+* [Fix] Lost settings after page refresh
 
 = 1.0.1 =
 * Enhancement

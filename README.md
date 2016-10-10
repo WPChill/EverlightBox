@@ -2,6 +2,8 @@
 
 WordPress lightbox gallery with social attitude
 
+![EverlightBox](images/banner-772x250.png)
+
 [![Join the chat at https://gitter.im/EverlightBox/Features](https://badges.gitter.im/EverlightBox/Features.svg)](https://gitter.im/EverlightBox/Features?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6a939df5f4e4464ea6f55348ffe76169)](https://www.codacy.com/app/diego_8/EverlightBox?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GreenTreeLabs/EverlightBox&amp;utm_campaign=Badge_Grade)
 
@@ -36,6 +38,20 @@ There are many ways to contribute to EverlightBox.
 * Engage with other EverlightBox users and developers on [StackOverflow](http://stackoverflow.com/questions/tagged/everlightbox). 
 * Join the [#everlightbox](http://twitter.com/#!/search/realtime/%23everlightbox) discussion on Twitter.
 * Contribute bug fixes.
+
+## Changelog 
+
+### 1.0.2
+
+- [Fix] Lost settings after page refresh
+
+### 1.0.1
+
+- When available, use data-title instead of title attribute to get the image caption
+
+### 1.0
+
+- First release!
 
 ## Author
 
