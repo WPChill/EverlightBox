@@ -81,7 +81,7 @@
 
             } else {
 
-                $( document ).on( 'touchstart click', selector, function( event ) {
+                $( document ).on( 'click', selector, function( event ) {
 
                     // console.log( isTouch );
 

@@ -79,6 +79,9 @@ Yes, you can do it when you share the image on Facebook, Pinterest and Houzz. Th
 
 == Changelog ==
 
+= 1.0.3 =
+* [Fix] Changed trigger event for mobile devices
+
 = 1.0.2 =
 * [Fix] Lost settings after page refresh
 
@@ -90,12 +93,14 @@ Yes, you can do it when you share the image on Facebook, Pinterest and Houzz. Th
 
 == Upgrade Notice ==
 
+= 1.0.3 =
+* [Fix] Changed trigger event for mobile devices
+
 = 1.0.2 =
 * [Fix] Lost settings after page refresh
 
 = 1.0.1 =
 * Enhancement
-
 
 = 1.0 =
 * This is the launch version. No changes yet.

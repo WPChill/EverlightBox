@@ -41,6 +41,10 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.3
+
+- [Fix] Changed trigger event for mobile devices
+
 ### 1.0.2
 
 - [Fix] Lost settings after page refresh
