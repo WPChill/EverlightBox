@@ -67,6 +67,10 @@ Yes it is. You can even use swipe gestures to browse all the images.
 
 Yes, you can do it when you share the image on Facebook, Pinterest and Houzz. The other social networks doesn't have this feature.
 
+= How do activate EverlightBox with Final Tiles Gallery or Modula Gallery? =
+
+In order to activate EverlightBox with these plugins you need to set the field "Lightbox & Links" to "Direct link to image".
+
 == Screenshots ==
 
 1. Mobile view with social networks enabled
