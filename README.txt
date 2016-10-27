@@ -27,7 +27,10 @@ and any linked image. You can even activate it using custom CSS selectors, so it
 
 EverlightBox is also a perfect solution for **mobile** devices, it supports swipe gestures so users are able to browse your images in a more natural way.
 
-[EverlightBox webiste](http://everlightbox.io)
+All users are welcome to propose new features, enhancements and bug fixes. You can fork the project from [EverlightBox Github](https://github.com/GreenTreeLabs/EverlightBox) repository.
+I wait for your pull requests!
+
+[EverlightBox website](http://everlightbox.io)
 
 
 == Installation ==
@@ -70,6 +73,11 @@ Yes, you can do it when you share the image on Facebook, Pinterest and Houzz. Th
 = How do activate EverlightBox with Final Tiles Gallery or Modula Gallery? =
 
 In order to activate EverlightBox with these plugins you need to set the field "Lightbox & Links" to "Direct link to image".
+
+= May I contribute?
+
+Yes! Fork the project from [EverlightBox Github](https://github.com/GreenTreeLabs/EverlightBox) repository.
+If you're not familiar with Git you may write on the [Gitter channel](https://gitter.im/EverlightBox/Features).
 
 == Screenshots ==
 
