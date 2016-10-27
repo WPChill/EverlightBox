@@ -83,6 +83,9 @@ In order to activate EverlightBox with these plugins you need to set the field "
 
 == Changelog ==
 
+= 1.0.5 =
+* [Add] Close lightbox by clicking background
+
 = 1.0.4 =
 * [Meta] Added new question to FAQs in README.txt
 
@@ -99,6 +102,9 @@ In order to activate EverlightBox with these plugins you need to set the field "
 * First release!
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+* [Add] Close lightbox by clicking background
 
 = 1.0.4 =
 * [Meta] Added new question to FAQs in README.txt

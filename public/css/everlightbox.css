@@ -130,6 +130,14 @@ html.everlightbox-html.everlightbox-touch {
 	width: 1px;
 	margin-right: -1px;
 }
+#everlightbox-slider .everlightbox-backstage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+}
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-close,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-social,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-comments,
@@ -223,6 +231,7 @@ html.everlightbox-html.everlightbox-touch {
 	height: auto;
 	vertical-align: middle;
 	z-index: 999;
+	position: relative;
 }
 #everlightbox-slider .slide .everlightbox-video-container {
 	background: none;

@@ -37,6 +37,7 @@
                 tumblrIcon: false,
                 downloadIcon: false,
                 facebook_comments: false,
+                closeBg: false,
                 rootCssClass: ''
             },
 
@@ -735,6 +736,12 @@
                     $this.loadMedia( src, function() {
                         slide.removeClass( 'slide-loading' );
                         slide.html(this);
+                        slide.prepend("<div class='everlightbox-backstage'></div>");
+
+                        if(plugin.settings.closeBg)
+                            slide.find(".everlightbox-backstage").click(function () {
+                                $this.closeSlide();
+                            });
 
                         var $img = this;
                         var img_pos = this.position();

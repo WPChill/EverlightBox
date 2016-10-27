@@ -288,6 +288,14 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
+			'name' => 'Close with background click',
+			'desc' => 'Close lightbox by clicking the background',
+			'id'   => 'close_bg',
+			'type' => 'checkbox',
+			'row_classes' => 'el-tab-2'
+		) );
+
+		$cmb_options->add_field( array(
 			'name' => 'Loop at end',
 			'desc' => 'Go back to the first image after the last one',
 			'id'   => 'loop',

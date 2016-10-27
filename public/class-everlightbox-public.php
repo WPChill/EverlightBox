@@ -192,6 +192,7 @@ class Everlightbox_Public {
 				downloadIcon: <?php echo $this->option_exists('download') ?>,
 				keyboard: !<?php echo $this->option_exists('disable_keyb_nav') ?>,
 				loopAtEnd: <?php echo $this->option_exists('loop') ?>,
+				closeBg: <?php echo $this->option_exists('close_bg') ?>,
 				facebook_comments: <?php echo $this->option_exists('facebook_comments') ?>
 			});
 		});
