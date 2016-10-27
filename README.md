@@ -42,6 +42,12 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.5
+- [Add] Close lightbox by clicking background
+
+### 1.0.4
+- [Meta] Added new question to FAQs in README.txt
+
 ### 1.0.3
 
 - [Fix] Changed trigger event for mobile devices
@@ -60,4 +66,4 @@ There are many ways to contribute to EverlightBox.
 
 ## Author
 
-EverlightBox is developed by Diego Imbriani - [GreenTreeLabs](http://www.greentreelabs.net)
+EverlightBox is developed and mantained by Diego Imbriani - [GreenTreeLabs](http://www.greentreelabs.net). Forks are welcome!
