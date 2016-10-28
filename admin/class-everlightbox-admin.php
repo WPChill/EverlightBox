@@ -280,6 +280,14 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
+			'name' => 'Enable Facebook like button',
+			'desc' => 'Let users like your photos',
+			'id'   => 'facebook_like',
+			'type' => 'checkbox',
+			'row_classes' => 'el-tab-3'
+		) );
+
+		$cmb_options->add_field( array(
 			'name' => 'Download button',
 			'desc' => 'Let users download the photo',
 			'id'   => 'download',

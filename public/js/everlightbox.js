@@ -35,6 +35,7 @@
                 houzzIcon: false,
                 googleplusIcon: false,
                 tumblrIcon: false,
+                facebookLike: false,
                 downloadIcon: false,
                 facebook_comments: false,
                 closeBg: false,
@@ -782,28 +783,28 @@
 
                         var social = [];
                         if(plugin.settings.facebookIcon)
-                            social.push('<a title="Share on Facebook" class="button everlightbox-facebook"><i class="ev-icon-facebook"></i></a>');                        
+                            social.push('<div title="Share on Facebook" class="button everlightbox-facebook"><i class="ev-icon-facebook"></i></div>');
                         if(plugin.settings.pinterestIcon)
-                            social.push('<a title="Share on Pinterest" class="button everlightbox-pinterest"><i class="ev-icon-pinterest"></i></a>');
+                            social.push('<div title="Share on Pinterest" class="button everlightbox-pinterest"><i class="ev-icon-pinterest"></i></div>');
                         if(plugin.settings.tumblrIcon)
-                            social.push('<a title="Share on Tumblr" class="button everlightbox-tumblr"><i class="ev-icon-tumblr"></i></a>');
+                            social.push('<div title="Share on Tumblr" class="button everlightbox-tumblr"><i class="ev-icon-tumblr"></i></div>');
                         if(plugin.settings.twitterIcon)
-                            social.push('<a title="Share on Twitter" class="button everlightbox-twitter"><i class="ev-icon-twitter"></i></a>');
+                            social.push('<div title="Share on Twitter" class="button everlightbox-twitter"><i class="ev-icon-twitter"></i></div>');
                         if(plugin.settings.houzzIcon)
-                            social.push('<a share="Share on Houzz" class="button everlightbox-houzz"><i class="ev-icon-houzz"></i></a>');
+                            social.push('<div share="Share on Houzz" class="button everlightbox-houzz"><i class="ev-icon-houzz"></i></div>');
                         if(plugin.settings.googleplusIcon)
-                            social.push('<a title="Share on Google+" class="button everlightbox-googleplus"><i class="ev-icon-gplus"></i></a>');                        
+                            social.push('<div title="Share on Google+" class="button everlightbox-googleplus"><i class="ev-icon-gplus"></i></div>');
                         if(plugin.settings.downloadIcon)
-                            social.push('<a title="Download image" href="'+ this.attr("src") +'" download class="button everlightbox-download"><i class="ev-icon-install"></i></a>');                            
-                        
-            
-                        if(social.length) {
+                            social.push('<div title="Download image" href="'+ this.attr("src") +'" download class="button everlightbox-download"><i class="ev-icon-install"></i></div>');
+                        if(plugin.settings.facebookLike)
+                            social.push('<div class="button fb-like" data-href="'+ this.attr("src") +'" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>');
+
+                        if(social.length)
                             $glass.append("<div class='everlightbox-social'>"+social.join('')+"</div>");
-                            /*$glass.find(".everlightbox-social").css({
-                                top: img_pos.top + $img.height() - 32,
-                                right: img_pos.left + 4,
-                                left: img_pos.left + 4
-                            });*/
+
+                        if(plugin.settings.facebookLike) {
+                            if (typeof FB != "undefined" && FB != null)
+                                FB.XFBML.parse();
                         }
 
                         if(plugin.settings.facebook_comments)

@@ -42,6 +42,9 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.6
+- [Add] Facebook like button
+
 ### 1.0.5
 - [Add] Close lightbox by clicking background
 

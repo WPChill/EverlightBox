@@ -163,7 +163,7 @@ html.everlightbox-html.everlightbox-touch {
 }
 #everlightbox-slider .everlightbox-comments,
 #everlightbox-slider .everlightbox-close,
-#everlightbox-slider .slide .everlightbox-social a {
+#everlightbox-slider .slide .everlightbox-social .button {
 	display: block;
 	text-decoration: none;
 	color:#fff;
@@ -189,12 +189,12 @@ html.everlightbox-html.everlightbox-touch {
 	right: 0;
 	left: 0;
 }
-#everlightbox-slider .slide .everlightbox-social a {
+#everlightbox-slider .slide .everlightbox-social .button {
 	display: inline-block;
 	margin-right: 4px;
 	height: 28px;
 }
-#everlightbox-slider .slide .everlightbox-social a:last-of-type {
+#everlightbox-slider .slide .everlightbox-social .button:last-of-type {
 	margin-right: 0;
 }
 #everlightbox-slider .everlightbox-comments,
@@ -265,10 +265,17 @@ html.everlightbox-html.everlightbox-touch {
 	top:40px;
 	left:10px;
 }
-#everlightbox-slider .fb-like {
-	position: absolute;	
+#everlightbox-slider .slide .everlightbox-social .fb-like {
+	display: inline-block;
+	background: transparent;
+	line-height: 0;
+	padding-top: 0;
+	width: 54px;
 }
-
+#everlightbox-slider .slide .everlightbox-social .fb-like span {
+	vertical-align: baseline !important;
+	top: 3px;
+}
 #everlightbox-title {
 	display: block;
 	width: 100%;

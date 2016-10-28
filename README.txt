@@ -4,7 +4,7 @@ Donate link: http://www.greentreelabs.net
 Tags: lightbox, gallery, social, social sharing, images, image gallery, lightbox image
 Requires at least: 3.0.1
 Tested up to: 4.6.1
-Stable tag: trunk
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,7 +74,7 @@ Yes, you can do it when you share the image on Facebook, Pinterest and Houzz. Th
 
 In order to activate EverlightBox with these plugins you need to set the field "Lightbox & Links" to "Direct link to image".
 
-= May I contribute?
+= May I contribute? =
 
 Yes! Fork the project from [EverlightBox Github](https://github.com/GreenTreeLabs/EverlightBox) repository.
 If you're not familiar with Git you may write on the [Gitter channel](https://gitter.im/EverlightBox/Features).
@@ -90,6 +90,9 @@ If you're not familiar with Git you may write on the [Gitter channel](https://gi
 7. "White splash" theme
 
 == Changelog ==
+
+= 1.0.6 =
+* [Add] Facebook like button
 
 = 1.0.5 =
 * [Add] Close lightbox by clicking background
@@ -110,6 +113,9 @@ If you're not familiar with Git you may write on the [Gitter channel](https://gi
 * First release!
 
 == Upgrade Notice ==
+
+= 1.0.6 =
+* [Add] Facebook like button
 
 = 1.0.5 =
 * [Add] Close lightbox by clicking background

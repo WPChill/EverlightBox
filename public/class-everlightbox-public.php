@@ -189,6 +189,7 @@ class Everlightbox_Public {
 				houzzIcon: <?php echo $this->option_value('social', 'houzz') ?>,
 				googleplusIcon: <?php echo $this->option_value('social', 'googleplus') ?>,
 				tumblrIcon: <?php echo $this->option_value('social', 'tumblr') ?>,
+				facebookLike: <?php echo $this->option_exists('facebook_like') ?>,
 				downloadIcon: <?php echo $this->option_exists('download') ?>,
 				keyboard: !<?php echo $this->option_exists('disable_keyb_nav') ?>,
 				loopAtEnd: <?php echo $this->option_exists('loop') ?>,
