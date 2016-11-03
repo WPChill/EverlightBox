@@ -194,7 +194,7 @@ html.everlightbox-html.everlightbox-touch {
 	margin-right: 4px;
 	height: 28px;
 }
-#everlightbox-slider .slide .everlightbox-social .button:last-of-type {
+#everlightbox-slider .slide .everlightbox-social .button.last-element {
 	margin-right: 0;
 }
 #everlightbox-slider .everlightbox-comments,
@@ -271,6 +271,9 @@ html.everlightbox-html.everlightbox-touch {
 	line-height: 0;
 	padding-top: 0;
 	width: 54px;
+}
+#everlightbox-slider .slide .everlightbox-social .fb-like:hover {
+	background: none;
 }
 #everlightbox-slider .slide .everlightbox-social .fb-like span {
 	vertical-align: baseline !important;

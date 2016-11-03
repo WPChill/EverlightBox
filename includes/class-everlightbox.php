@@ -59,7 +59,7 @@ class Everlightbox {
 	public function __construct() {
 
 		$this->plugin_name = 'everlightbox';
-		$this->version = '1.0.6';
+		$this->version = '1.0.7';
 
 		$this->load_dependencies();
 		$this->set_locale();
