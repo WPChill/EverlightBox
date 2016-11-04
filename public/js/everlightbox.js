@@ -37,6 +37,7 @@
                 tumblrIcon: false,
                 facebookLike: false,
                 downloadIcon: false,
+                fullscreenIcon: false,
                 facebook_comments: false,
                 closeBg: false,
                 rootCssClass: ''
@@ -769,17 +770,25 @@
                             $glass.append("<p class='everlightbox-caption'><span>"+title+"</span></p>");
                         }
                         
-                        /*$glass.find(".everlightbox-caption").css({
-                            top: img_pos.top + 4,
-                            left: img_pos.left + 40,
-                            right: img_pos.left + 40
-                        });*/
+                        
 
                         $glass.append('<a class="everlightbox-close"><i class="ev-icon-cancel"></i></a>');
-                        /*$glass.find(".everlightbox-close").css({
-                            top: img_pos.top + 4,
-                            right: img_pos.left + 4,
-                        });*/
+                        
+                        if(plugin.settings.fullscreenIcon) {                            
+                            $glass.append('<a title="Fullscreen" class="everlightbox-fullscreen"><i class="ev-icon-resize-full"></i></a>');    
+                            $glass.find(".everlightbox-fullscreen").click(function () {
+                                var elem = document.getElementById("everlightbox-overlay");
+                                if (elem.requestFullscreen) {
+                                  elem.requestFullscreen();
+                                } else if (elem.msRequestFullscreen) {
+                                  elem.msRequestFullscreen();
+                                } else if (elem.mozRequestFullScreen) {
+                                  elem.mozRequestFullScreen();
+                                } else if (elem.webkitRequestFullscreen) {
+                                  elem.webkitRequestFullscreen();
+                                }
+                            });                            
+                        }                            
 
                         var social = [];
                         if(plugin.settings.facebookIcon)

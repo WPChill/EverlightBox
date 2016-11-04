@@ -78,6 +78,9 @@
 .ev-icon-commenting-o:before {
   content: "\6b";
 }
+.ev-icon-resize-full:before {
+  content: "\6d";
+}
 
 html.everlightbox-html.everlightbox-touch {
 	overflow: hidden !important;
@@ -138,6 +141,7 @@ html.everlightbox-html.everlightbox-touch {
 	bottom: 0;
 	z-index: 1;
 }
+#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-fullscreen,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-close,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-social,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-comments,
@@ -145,12 +149,14 @@ html.everlightbox-html.everlightbox-touch {
 	opacity: 0;
 	transition: opacity .25s;
 }
+#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-fullscreen,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-close,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-social,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-comments,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-caption {
 	opacity: 1;
 }
+#everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-fullscreen,
 #everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-close,
 #everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-social,
 #everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-comments,
@@ -163,6 +169,7 @@ html.everlightbox-html.everlightbox-touch {
 }
 #everlightbox-slider .everlightbox-comments,
 #everlightbox-slider .everlightbox-close,
+#everlightbox-slider .everlightbox-fullscreen,
 #everlightbox-slider .slide .everlightbox-social .button {
 	display: block;
 	text-decoration: none;
@@ -197,12 +204,14 @@ html.everlightbox-html.everlightbox-touch {
 #everlightbox-slider .slide .everlightbox-social .button.last-element {
 	margin-right: 0;
 }
+#everlightbox-slider .everlightbox-fullscreen,
 #everlightbox-slider .everlightbox-comments,
 #everlightbox-slider .everlightbox-close {
 	font-size: 24px;
     line-height: 35px;
     position: absolute;
 }
+#everlightbox-slider .everlightbox-fullscreen:hover,
 #everlightbox-slider .everlightbox-comments.everlightbox-comments-active,
 #everlightbox-slider .everlightbox-comments:hover,
 #everlightbox-slider .everlightbox-close:hover {
@@ -326,7 +335,8 @@ html.everlightbox-html.everlightbox-touch {
 	opacity: 0.3;
 }
 
-.everlightbox-close {
+#everlightbox-slider .everlightbox-fullscreen,
+#everlightbox-slider .everlightbox-close {
 	top: 10px;
 	right: 20px;
 	position: absolute;
@@ -336,8 +346,11 @@ html.everlightbox-html.everlightbox-touch {
 	width:30px;
 	height: 30px;
 }
+#everlightbox-slider .everlightbox-fullscreen {
+	right:54px;
+}
 
-.everlightbox-no-close-button .everlightbox-close {
+.everlightbox-no-close-button #everlightbox-slider .everlightbox-close {
 	display: none;
 }
 #everlightbox-slider .fb-comments {

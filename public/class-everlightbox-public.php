@@ -191,9 +191,10 @@ class Everlightbox_Public {
 				tumblrIcon: <?php echo $this->option_value('social', 'tumblr') ?>,
 				facebookLike: <?php echo $this->option_exists('facebook_like') ?>,
 				downloadIcon: <?php echo $this->option_exists('download') ?>,
+				fullscreenIcon: <?php echo $this->option_exists('fullscreen_icon') ?>,
 				keyboard: !<?php echo $this->option_exists('disable_keyb_nav') ?>,
 				loopAtEnd: <?php echo $this->option_exists('loop') ?>,
-				closeBg: <?php echo $this->option_exists('close_bg') ?>,
+				closeBg: <?php echo $this->option_exists('close_bg') ?>,				
 				facebook_comments: <?php echo $this->option_exists('facebook_comments') ?>
 			});
 		});

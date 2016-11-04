@@ -304,6 +304,14 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
+			'name' => 'Show fullscreen icon',
+			'desc' => 'Let users maximize the browser window',
+			'id'   => 'fullscreen_icon',
+			'type' => 'checkbox',
+			'row_classes' => 'el-tab-2'
+		) );
+
+		$cmb_options->add_field( array(
 			'name' => 'Loop at end',
 			'desc' => 'Go back to the first image after the last one',
 			'id'   => 'loop',

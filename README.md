@@ -42,6 +42,9 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.8
+- [Add] Fullscreen button
+
 ### 1.0.7
 - [Fix] Fixed download button after last update
 
