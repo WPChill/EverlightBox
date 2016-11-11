@@ -42,6 +42,9 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.9
+- [Fix] Images with query string are now correctly parsed
+
 ### 1.0.8
 - [Add] Fullscreen button
 

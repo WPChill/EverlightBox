@@ -128,7 +128,8 @@ class Everlightbox_Public {
 			var $linked = jQuery();
 
 			function endsWith(str, suffix) {
-			    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+				var clean = str.split('?')[0];
+			    return str.indexOf(suffix, clean.length - suffix.length) !== -1;
 			}
 
 			<?php if($this->option_exists('wp_galleries', false) || 
@@ -170,7 +171,7 @@ class Everlightbox_Public {
 					href = href.toLowerCase();
 
 					if(endsWith(href, ".jpg") || endsWith(href, ".jpeg") ||
-					   endsWith(href, ".gif") || endsWith(href, ".bmp")) {
+					   endsWith(href, ".gif") || endsWith(href, ".png")) {
 						$all = $all.add($(this));
 					}
 				}

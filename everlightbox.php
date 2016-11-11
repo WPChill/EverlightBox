@@ -1,13 +1,6 @@
 <?php
 
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
- *
  * @link              http://www.greentreelabs.net
  * @since             1.0.0
  * @package           Everlightbox
@@ -16,7 +9,7 @@
  * Plugin Name:       EverlightBox
  * Plugin URI:        everlightbox
  * Description:       Light and stylish lightbox for WordPress
- * Version:           1.0.8
+ * Version:           1.0.9
  * Author:            GreenTreeLabs
  * Author URI:        http://www.greentreelabs.net
  * License:           GPL-2.0+
@@ -30,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define("EVERLIGHTBOX_VERSION", "1.0.8");
+define("EVERLIGHTBOX_VERSION", "1.0.9");
 
 
 function activate_everlightbox() {	
