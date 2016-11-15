@@ -200,7 +200,6 @@ class Everlightbox_Admin {
 			),
 		) );
 
-
 		$cmb_options->add_field( array(
 			'name'     => __( 'Theme', 'cmb2' ),
 			'desc'     => '',
@@ -212,6 +211,14 @@ class Everlightbox_Admin {
 				'dark' => __( 'Dark night', 'cmb2' ),
 				'white-splash' => __( 'White splash', 'cmb2' ),
 			),
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => 'Anchor buttons to edges',
+			'desc' => '',
+			'id'   => 'buttons_edges',
+			'type' => 'checkbox',
+			'row_classes' => 'el-tab-1'
 		) );
 
 		$cmb_options->add_field( array(
@@ -275,6 +282,14 @@ class Everlightbox_Admin {
 			'name' => 'Enable Facebook comments',
 			'desc' => 'Let users comments your photos',
 			'id'   => 'facebook_comments',
+			'type' => 'checkbox',
+			'row_classes' => 'el-tab-3'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => 'Show Facebook comment count',
+			'desc' => 'Show comment count for each image',
+			'id'   => 'facebook_comment_count',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-3'
 		) );

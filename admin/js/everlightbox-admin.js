@@ -8,14 +8,19 @@
 
 		function switchSelectors() {
 			if($("#all_links").get(0).checked)
-				$(".cmb2-id-wp-galleries, .cmb2-id-custom-selector").hide();
+				$(".cmb2-id-wp-galleries, .cmb2-id-custom-selector").addClass("hidden");
 			else
-				$(".cmb2-id-wp-galleries, .cmb2-id-custom-selector").show();
+				$(".cmb2-id-wp-galleries, .cmb2-id-custom-selector").removeClass("hidden");
+
+			if($("#facebook_comments").get(0).checked)
+				$(".cmb2-id-facebook-comment-count").removeClass("hidden");
+			else
+				$(".cmb2-id-facebook-comment-count").addClass("hidden");
 		}
 		
 
 		$(function () {
-			$("#all_links").click(switchSelectors);
+			$("#all_links, #facebook_comments").click(switchSelectors);
 			switchSelectors();
 		});	
 

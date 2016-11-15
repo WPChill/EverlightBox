@@ -162,11 +162,16 @@ class Everlightbox {
 		$plugin_public = new Everlightbox_Public( $this->get_plugin_name(), $this->get_version() );
 		$plugin_public->options = get_option('everlightbox_options');
 
-		if(isset($_GET['debug']))
+		if(isset($_GET['everlightbox-debug']))
 		{
 			echo "<!--\n";
 			print_r($plugin_public->options);
 			echo "\n-->\n";			
+		}
+
+		if($plugin_public->options['facebook_comments'] == 'on')
+		{
+			$this->loader->add_action( 'wp_ajax_fetch_comments_count', $plugin_public, 'fetch_comments_count' );
 		}
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );

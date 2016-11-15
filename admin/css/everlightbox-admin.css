@@ -31,8 +31,11 @@ h1 {
 #everlightbox_options {
 	margin-top:20px;
 }
-#el-tabs {
-	
+.cmb-row.hidden {
+	display: none !important;
+}
+.cmb2-id-facebook-comment-count {
+	display: none;
 }
 #el-tabs a {
 	display: inline-block;

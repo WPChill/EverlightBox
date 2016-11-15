@@ -86,13 +86,37 @@ class Everlightbox_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	private function option_exists($name, $print=true) {
+	private function option_exists($name, $print=true)
+	{
 		if($print)
 			return isset($this->options[$name]) ? 
 				"true" : "false";		
 
 		return isset($this->options[$name]);
-	}	
+	}
+
+	/**
+	 * Fetch comments count
+	 *
+	 * @since    1.0.10
+	 */
+	public function fetch_comments_count()
+	{
+		if (check_admin_referer('everlightbox', 'everlightbox'))
+		{
+			$ch = curl_init();
+			$timeout = 15;
+			curl_setopt($ch, CURLOPT_URL, 'http://graph.facebook.com/v2.4/?fields=share{comment_count}&id=' . $_GET['url']);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+			$data = curl_exec($ch);
+			curl_close($ch);
+
+			echo $data;
+
+		}
+		wp_die();
+	}
 
 	/**
 	 * Print scripts inside footer
@@ -181,9 +205,13 @@ class Everlightbox_Public {
 			<?php
 				$sticky_buttons_css = $this->option_exists('sticky_buttons', false) ? "sticky-buttons" : "";
 				$sticky_caption_css = $this->option_exists('sticky_caption', false) ? "sticky-caption" : "";
+				$buttons_edges_css = $this->option_exists('buttons_edges', false) ? "buttons-edges" : "";
+
 			?>
+
 			$(".everlightbox-trigger").everlightbox({
-				rootCssClass: '<?php echo $this->options['theme'] . " " . $sticky_buttons_css . " " . $sticky_caption_css ?>',
+				rootCssClass: '<?php echo $this->options['theme'] . " " . $sticky_buttons_css . " " .
+				                          $sticky_caption_css . " " . $buttons_edges_css ?>',
 				facebookIcon: <?php echo $this->option_value('social', 'facebook') ?>,
 				twitterIcon: <?php echo $this->option_value('social', 'twitter') ?>,
 				pinterestIcon: <?php echo $this->option_value('social', 'pinterest') ?>,
@@ -195,8 +223,14 @@ class Everlightbox_Public {
 				fullscreenIcon: <?php echo $this->option_exists('fullscreen_icon') ?>,
 				keyboard: !<?php echo $this->option_exists('disable_keyb_nav') ?>,
 				loopAtEnd: <?php echo $this->option_exists('loop') ?>,
-				closeBg: <?php echo $this->option_exists('close_bg') ?>,				
-				facebook_comments: <?php echo $this->option_exists('facebook_comments') ?>
+				closeBg: <?php echo $this->option_exists('close_bg') ?>,
+				anchorButtonsToEdges: <?php echo $this->option_exists('buttons_edges') ?>,
+				facebookComments: <?php echo $this->option_exists('facebook_comments') ?>,
+				facebookCommentCount: <?php echo $this->option_exists('facebook_comment_count') ?>,
+				labels: {
+					"comments": "<?php _e('comments', 'everlightbox') ?>"
+				},
+				nonce: "<?php echo wp_create_nonce('everlightbox'); ?>"
 			});
 		});
 		</script>
@@ -220,6 +254,10 @@ class Everlightbox_Public {
 	public function enqueue_scripts() {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/everlightbox.js', array( 'jquery' ), $this->version, false );
+		if($this->option_exists('facebook_comments', false))
+		{
+			wp_localize_script( $this->plugin_name, 'everlightbox_ajax_object', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+		}
 	}
 
 }

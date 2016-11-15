@@ -36,10 +36,12 @@
                 googleplusIcon: false,
                 tumblrIcon: false,
                 facebookLike: false,
+                facebookCommentCount: false,
                 downloadIcon: false,
                 fullscreenIcon: false,
-                facebook_comments: false,
+                facebookComments: false,
                 closeBg: false,
+                anchorButtonsToEdges: false,
                 rootCssClass: ''
             },
 
@@ -232,7 +234,7 @@
                 }
 
                 sliderCss = {
-                    width : width,
+                    width : '100%',
                     height : height
                 };
 
@@ -242,7 +244,7 @@
                     var w = $img.width();
                     var h = $img.height();
                     var pos = $img.position();
-                    if(w && h) {
+                    if(w && h && !plugin.settings.anchorButtonsToEdges) {
                         $(this).find(".everlightbox-glass").css({
                             top: pos.top,
                             left: pos.left,
@@ -265,6 +267,7 @@
                 var $this = this;
 
                 $('body').on('touchstart click', '.everlightbox-pinterest', function (e) {
+                    e.preventDefault();
                     var text = $this.getCurrentTitle();
                     var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
 
@@ -277,6 +280,7 @@
                 });
 
                 $('body').on('touchstart click', '.everlightbox-twitter', function (e) {
+                    e.preventDefault();
                     var text = $this.getCurrentTitle();
                     var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
 
@@ -285,6 +289,7 @@
                 });
 
                 $('body').on('touchstart click', '.everlightbox-googleplus', function (e) {
+                    e.preventDefault();
                     var text = $this.getCurrentTitle();
                     var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
 
@@ -295,6 +300,7 @@
                 });
 
                 $('body').on('touchstart click', '.everlightbox-houzz', function (e) {
+                    e.preventDefault();
                     var text = $this.getCurrentTitle();
                     var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
 
@@ -306,6 +312,7 @@
                 });
 
                 $('body').on('touchstart click', '.everlightbox-facebook', function (e) {
+                    e.preventDefault();
                     var text = $this.getCurrentTitle();
                     var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
 
@@ -325,6 +332,7 @@
                 });
 
                 $('body').on('touchstart click', '.everlightbox-tumblr', function (e) {
+                    e.preventDefault();
                     var text = $this.getCurrentTitle();
                     var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
 
@@ -567,27 +575,6 @@
             },
 
             /**
-             * Show navigation and title bars
-             */
-            showBars : function () {
-                
-            },
-
-            /**
-             * Hide navigation and title bars
-             */
-            hideBars : function () {
-                
-            },
-
-            /**
-             * Animate navigation and top bars
-             */
-            animBars : function () {
-                
-            },
-
-            /**
              * Keyboard navigation
              */
             keyboard : function () {
@@ -750,45 +737,49 @@
 
                         var $glass = $("<div class='everlightbox-glass'></div>");
                         $glass.css({
-                            position: 'absolute',
-                            top: img_pos.top,
-                            left: img_pos.left,
-                            width: $img.width(),
-                            height: $img.height(),
+                            top: plugin.settings.anchorButtonsToEdges ? 0 : img_pos.top,
+                            left: plugin.settings.anchorButtonsToEdges ? 0 : img_pos.left,
+                            width: plugin.settings.anchorButtonsToEdges ? '100%' : $img.width(),
+                            height: plugin.settings.anchorButtonsToEdges ? '100%' : $img.height(),
                             zIndex: 1000
                         });
 
                         slide.append($glass);
+                        $glass.append("<div class='everlightbox-top-bar'></div>");
+                        var $topbar = $glass.find(".everlightbox-top-bar");
+
+                        $topbar.append("<div class='everlightbox-right-side'></div>");
+                        var $topbarRight = $topbar.find(".everlightbox-right-side");
+
+                        $topbar.append("<div class='everlightbox-left-side'></div>");
+                        var $topbarLeft = $topbar.find(".everlightbox-left-side");
                         
                         var title = null;
                         if ( elements[ index ] !== undefined ) {
                             title = elements[ index ].title;
                         }
 
-
                         if ( title ) {
-                            $glass.append("<p class='everlightbox-caption'><span>"+title+"</span></p>");
+                            $topbar.append("<p class='everlightbox-caption'><span>"+title+"</span></p>");
                         }
                         
-                        
-
-                        $glass.append('<a class="everlightbox-close"><i class="ev-icon-cancel"></i></a>');
-                        
-                        if(plugin.settings.fullscreenIcon) {                            
-                            $glass.append('<a title="Fullscreen" class="everlightbox-fullscreen"><i class="ev-icon-resize-full"></i></a>');    
-                            $glass.find(".everlightbox-fullscreen").click(function () {
+                        if(plugin.settings.fullscreenIcon) {
+                            $topbarRight.append('<a title="Fullscreen" class="everlightbox-fullscreen"><i class="ev-icon-resize-full"></i></a>');
+                            $topbarRight.find(".everlightbox-fullscreen").click(function () {
                                 var elem = document.getElementById("everlightbox-overlay");
                                 if (elem.requestFullscreen) {
-                                  elem.requestFullscreen();
+                                    elem.requestFullscreen();
                                 } else if (elem.msRequestFullscreen) {
-                                  elem.msRequestFullscreen();
+                                    elem.msRequestFullscreen();
                                 } else if (elem.mozRequestFullScreen) {
-                                  elem.mozRequestFullScreen();
+                                    elem.mozRequestFullScreen();
                                 } else if (elem.webkitRequestFullscreen) {
-                                  elem.webkitRequestFullscreen();
+                                    elem.webkitRequestFullscreen();
                                 }
-                            });                            
-                        }                            
+                            });
+                        }
+
+                        $topbarRight.append('<a class="everlightbox-close"><i class="ev-icon-cancel"></i></a>');
 
                         var social = [];
                         if(plugin.settings.facebookIcon)
@@ -818,23 +809,36 @@
                                 FB.XFBML.parse();
                         }
 
-                        if(plugin.settings.facebook_comments)
+                        if(plugin.settings.facebookComments)
                         {
-                            $glass.append('<a title="Show comments" class="everlightbox-comments"><i class="ev-icon-commenting-o"></i></a>');
-                            $glass.find(".everlightbox-comments").css({
-                                /*top: img_pos.top + 4,
-                                left: img_pos.left + 4*/
-                            }).on("touchstart click", function () {
-                                $(this).toggleClass("everlightbox-comments-active");
-                                if($(this).hasClass("everlightbox-comments-active")) {
+                            $topbarLeft.append('<a title="Show comments" class="everlightbox-comments"><i class="ev-icon-commenting-o"></i></a>');
+
+                            if(plugin.settings.facebookCommentCount)  {
+                                $.get(everlightbox_ajax_object.ajaxurl, {
+                                    url: $img.attr("src"),
+                                    action: 'fetch_comments_count',
+                                    everlightbox: plugin.settings.nonce
+                                }, function (r) {
+                                    if(r) {
+                                        try {
+                                            var data = JSON.parse(r);
+                                            if(data && data.share && data.share.comment_count && data.share.comment_count > 0)
+                                                $topbarLeft.append("<span class='everlightbox-comment-count'>"+ data.share.comment_count +" " +
+                                                    plugin.settings.labels["comments"] +  "</span>");
+                                        } catch(err) {
+                                            console.info(err);
+                                        }
+                                    }
+                                });
+                            }
+
+                            $topbar.on("touchstart click", ".everlightbox-comments, .everlightbox-comment-count", function () {
+                                $topbarLeft.find(".everlightbox-comments").toggleClass("everlightbox-comments-active");
+                                if($topbarLeft.find(".everlightbox-comments").hasClass("everlightbox-comments-active")) {
                                     if($glass.find(".fb-comments").length) {
                                         $glass.find(".fb-comments").show();
                                     } else {
-                                        $glass.append('<div class="fb-comments" data-href="'+ $img.attr("src") + '" data-width="300" data-numposts="5"></div>');
-                                        /*$glass.find(".fb-comments").css({
-                                            top: img_pos.top + 64,
-                                            left: img_pos.left + 4
-                                        });*/
+                                        $topbar.append('<div class="fb-comments" data-href="'+ $img.attr("src") + '" data-width="300" data-numposts="5"></div>');
                                         if (typeof FB != "undefined" && FB != null)
                                             FB.XFBML.parse();
                                     }                                    
