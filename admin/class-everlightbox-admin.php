@@ -343,6 +343,14 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
+			'name' => 'WordPress native linked images with captions',
+			'desc' => '"Native linked images" are the images<br>you add through the WP Media Panel.<br>EverlightBox can recognize them only if<br>they have a caption, otherwise check the "All images" option',
+			'id'   => 'wp_images',
+			'type' => 'checkbox',
+			'row_classes' => 'el-tab-2'
+		) );
+
+		$cmb_options->add_field( array(
 			'name' => 'WordPress native galleries',
 			'desc' => 'Enable the lightbox on all native galleries',
 			'id'   => 'wp_galleries',

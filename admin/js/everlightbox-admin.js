@@ -7,11 +7,13 @@
 
 
 		function switchSelectors() {
-			if($("#all_links").get(0).checked)
+			if($("#all_links").get(0).checked) {
 				$(".cmb2-id-wp-galleries, .cmb2-id-custom-selector").addClass("hidden");
-			else
+				$(".cmb2-id-wp-images, .cmb2-id-custom-selector").addClass("hidden");
+			} else {
 				$(".cmb2-id-wp-galleries, .cmb2-id-custom-selector").removeClass("hidden");
-
+				$(".cmb2-id-wp-images, .cmb2-id-custom-selector").removeClass("hidden");
+			}
 			if($("#facebook_comments").get(0).checked)
 				$(".cmb2-id-facebook-comment-count").removeClass("hidden");
 			else

@@ -42,6 +42,9 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.11
+- [Fix] Fixed support for WordPress native linked images with captions
+
 ### 1.0.10
 - [Add] New layout: buttons anchored to edges
 - [Add] Facebook comment count

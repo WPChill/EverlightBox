@@ -186,6 +186,17 @@ class Everlightbox_Public {
 
 			<?php endif ?>
 
+			<?php if($this->option_exists('wp_images', false) ||
+			         $this->option_exists('all_links', false)) : ?>
+			$("figure").each(function () {
+				if($(this).find(".wp-caption-text").length) {
+					var title = $.trim($(this).find(".wp-caption-text").text());
+					$(this).find("a").attr("title", title).addClass("everlightbox-trigger");
+				}
+				$linked.add($(this).find("a"));
+			});
+
+			<?php endif ?>
 			<?php if($this->option_exists('all_links', false)) : ?>
 
 			var $all = $();
