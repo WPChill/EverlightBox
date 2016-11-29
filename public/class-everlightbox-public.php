@@ -250,10 +250,6 @@ class Everlightbox_Public {
 				},
 				nonce: "<?php echo wp_create_nonce('everlightbox'); ?>"
 			});
-
-            wp.hooks.addFilter('everlightbox.openMedia', function (slide) {
-                console.log(slide);
-            });
 		});
 		</script>
 	<?php }
