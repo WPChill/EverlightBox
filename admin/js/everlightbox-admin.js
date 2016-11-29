@@ -1,3 +1,14 @@
+var EverlightBoxTabs = function () {
+	var tabs = [];
+	return {
+		add: function (code, text) {
+			tabs.push({ code: code, text: text });
+		},
+		get: function () {
+			return tabs;
+        }
+	}
+}();
 (function( $ ) {
 	'use strict';
 
@@ -26,13 +37,27 @@
 			switchSelectors();
 		});	
 
+		/* TABS */
+		var tabs = [];
+		$(".cmb-row").each(function () {
+			var classes = $(this).attr("class").split(' ');
+			$.each(classes, function () {
+				if(this.substr(0, "e-tab-".length) == "el-tab-") {
+					var tab = this.split('-')[2];
+					if(! $.inArray(tab, tabs))
+						tabs.push(tab);
+				}
+			});
+		});
 
-		/* BEGIN TABS */
+		tabs.sort();
+
 		$("#everlightbox_options").prepend("<div id='el-tabs'></div>");
-		$("#el-tabs").append("<a data-tab='1' class='active'>Aspect</a>");
-		$("#el-tabs").append("<a data-tab='2'>Features</a>");
-		$("#el-tabs").append("<a data-tab='3'>Social</a>");
-		$("#el-tabs").append("<a data-tab='4'>Galleries</a>");
+
+		EverlightBoxTabs.get().map(function (i) {
+            $("#el-tabs").append("<a data-tab='" + i.code + "'>" + i.text + "</a>");
+		});
+        $("#el-tabs a:first").addClass("active");
 
 		$(".cmb2-wrap").append($("#greentreelabs-plugins"));
 

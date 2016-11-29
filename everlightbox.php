@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @link              http://www.greentreelabs.net
+ * @link              http://everlightbox.io
  * @since             1.0.0
  * @package           Everlightbox
  *
@@ -9,7 +9,7 @@
  * Plugin Name:       EverlightBox
  * Plugin URI:        everlightbox
  * Description:       Light and stylish lightbox for WordPress
- * Version:           1.0.11
+ * Version:           1.0.12
  * Author:            GreenTreeLabs
  * Author URI:        http://www.greentreelabs.net
  * License:           GPL-2.0+
@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define("EVERLIGHTBOX_VERSION", "1.0.11");
+define("EVERLIGHTBOX_VERSION", "1.0.12");
 
 
 function activate_everlightbox() {	

@@ -42,6 +42,9 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.12
+- [Add] Don't include Facebook script option
+
 ### 1.0.11
 - [Fix] Fixed support for WordPress native linked images with captions
 

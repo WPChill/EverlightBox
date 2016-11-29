@@ -16,9 +16,14 @@
 
 <div class="wrap" id="everlightbox-settings">
 	<h1>EverlightBox settings</h1>
+    <script>
+	    <?php foreach ($tabs->get_tabs() as $k => $v) : ?>
+        EverlightBoxTabs.add("<?php echo $k ?>", "<?php echo $v ?>");
+        <?php endforeach; ?>
+    </script>
 	<?php echo cmb2_metabox_form($this->metabox_id, $this->option_key) ?>
 
-	<div id="greentreelabs-plugins" style="display:none" class="el-tab-4 el-to-hide">
+	<div id="greentreelabs-plugins" style="display:none" class="el-tab-galleries el-to-hide">
 		<p>Try also our awesome galleries:</p>
 		<div class="gtl-item">
 			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/final-tiles.jpg">

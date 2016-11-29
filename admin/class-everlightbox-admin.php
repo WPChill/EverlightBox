@@ -10,6 +10,8 @@
  * @subpackage Everlightbox/admin
  */
 
+require_once dirname( __FILE__ ) . "/../includes/class-everlightbox_admintab.php";
+
 if ( ! class_exists( 'CMB2', false ) ) {
 	if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
 		require_once dirname( __FILE__ ) . '/cmb2/init.php';
@@ -159,6 +161,15 @@ class Everlightbox_Admin {
 	 */
 	public function page_settings()
 	{
+		$tabs = new EverlightBox_AdminTab();
+		$tabs->add("1", "Aspect");
+		$tabs->add("2", "Features");
+		$tabs->add("3", "Social");
+
+		apply_filters('everlightbox_additional_tabs', $tabs);
+
+		$tabs->add("galleries", "Galleries");
+
 		include "partials/everlightbox-admin-display.php";
 	}
 
@@ -279,6 +290,14 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
+			'name' => 'Don\'t include Facebook scripts',
+			'desc' => 'Check this box if your theme, or other plugins, already include Facebook scripts',
+			'id'   => 'no_facebook_scripts',
+			'type' => 'checkbox',
+			'row_classes' => 'el-tab-3'
+		) );
+
+		$cmb_options->add_field( array(
 			'name' => 'Enable Facebook comments',
 			'desc' => 'Let users comments your photos',
 			'id'   => 'facebook_comments',
@@ -381,6 +400,8 @@ class Everlightbox_Admin {
 			 'type' => 'textarea',
 			 'row_classes' => 'el-tab-2'
 		 ) );
+
+		apply_filters('everlightbox_additional_fields', $cmb_options);
 
 		///TODO
 		/*

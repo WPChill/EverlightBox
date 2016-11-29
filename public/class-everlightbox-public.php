@@ -124,6 +124,9 @@ class Everlightbox_Public {
 	 * @since    1.0.0
 	 */
 	public function footer() { ?>
+
+        <?php if(! $this->option_exists('no_facebook_scripts', false)) : ?>
+
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
 		  var js, fjs = d.getElementsByTagName(s)[0];
@@ -132,6 +135,10 @@ class Everlightbox_Public {
 		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
+
+        <?php endif ?>
+
+
 		<style>
 			#everlightbox-slider .slide img, 
 			#everlightbox-slider .slide .everlightbox-video-container, 
@@ -243,6 +250,10 @@ class Everlightbox_Public {
 				},
 				nonce: "<?php echo wp_create_nonce('everlightbox'); ?>"
 			});
+
+            wp.hooks.addFilter('everlightbox.openMedia', function (slide) {
+                console.log(slide);
+            });
 		});
 		</script>
 	<?php }
