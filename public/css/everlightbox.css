@@ -219,6 +219,7 @@ html.everlightbox-html.everlightbox-touch {
 	top:10px;
 	left: 0;
 	right: 0;
+	z-index: 10;
 }
 #everlightbox-slider .slide .everlightbox-top-bar .everlightbox-right-side {
 	position: absolute;

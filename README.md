@@ -2,6 +2,11 @@
 
 WordPress lightbox gallery with social attitude
 
+[![Wordpress plugin](http://img.shields.io/wordpress/plugin/v/everlightbox.svg)](https://wordpress.org/plugins/everlightbox/)
+[![Wordpress](http://img.shields.io/wordpress/plugin/dt/everlightbox.svg)](https://wordpress.org/plugins/everlightbox/)
+[![Wordpress rating](http://img.shields.io/wordpress/plugin/r/everlightbox.svg)](https://wordpress.org/plugins/everlightbox/)
+
+
 ![EverlightBox](images/banner-772x250.png)
 
 [![Join the chat at https://gitter.im/EverlightBox/Features](https://badges.gitter.im/EverlightBox/Features.svg)](https://gitter.im/EverlightBox/Features?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
