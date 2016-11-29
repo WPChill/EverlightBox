@@ -123,7 +123,9 @@ class Everlightbox_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function footer() { ?>
+	public function footer() {
+
+	 ?>
 
         <?php if(! $this->option_exists('no_facebook_scripts', false)) : ?>
 
@@ -261,7 +263,8 @@ class Everlightbox_Public {
 	 */
 	public function enqueue_styles() {
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/everlightbox.css', array(), $this->version, 'all' );
+		wp_register_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/everlightbox.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name );
 	}
 
 	/**
