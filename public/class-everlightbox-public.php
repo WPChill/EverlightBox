@@ -175,7 +175,7 @@ class Everlightbox_Public {
 			    return str.indexOf(suffix, clean.length - suffix.length) !== -1;
 			}
 
-			<?php if($this->option_exists('wp_galleries', false) || 
+			<?php if($this->option_exists('wp_galleries', false) ||
 					 $this->option_exists('all_links', false)) : ?>
 
 			$linked.add($(".gallery .gallery-item a").addClass("everlightbox-trigger"));
@@ -286,7 +286,7 @@ class Everlightbox_Public {
 
 		wp_register_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/everlightbox.js', array( 'jquery' ), $this->version, true );
 		wp_enqueue_script( $this->plugin_name );
-		
+
 		if($this->option_exists('facebook_comments', false))
 		{
 			wp_localize_script( $this->plugin_name, 'everlightbox_ajax_object', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );

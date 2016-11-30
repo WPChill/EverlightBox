@@ -160,7 +160,8 @@ class Everlightbox {
 	private function define_public_hooks() {
 
 		$plugin_public = new Everlightbox_Public( $this->get_plugin_name(), $this->get_version() );
-		$plugin_public->options = get_option('everlightbox_options');
+		$options = get_option('everlightbox_options');
+		$plugin_public->options = apply_filters('everlightbox_options', $options);
 
 		if(isset($_GET['everlightbox-debug']))
 		{
