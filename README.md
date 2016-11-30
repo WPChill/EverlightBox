@@ -42,6 +42,10 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.13 
+- [Add] Exit from fullscreen view
+- [Fix] Fixed not clickable anchored buttons
+
 ### 1.0.12
 - [Add] Don't include Facebook script option
 

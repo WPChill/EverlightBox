@@ -119,6 +119,29 @@ class Everlightbox_Public {
 	}
 
 	/**
+	 * Print scripts inside header
+	 *
+	 * @since    1.0.13
+	 */
+	public function header() { ?>
+        <style>
+            #everlightbox-slider .slide img,
+            #everlightbox-slider .slide .everlightbox-video-container,
+            #everlightbox-slider .slide .everlightbox-inline-container {
+                max-width: <?php echo $this->options['max_width'] ?>%;
+                max-height: <?php echo $this->options['max_height'] ?>%;
+            }
+
+            <?php if($this->option_exists('round_corners', false)) : ?>
+            #everlightbox-slider .slide img {
+                border-radius:4px;
+            }
+            <?php endif ?>
+        </style>
+    <?php
+	}
+
+	/**
 	 * Print scripts inside footer
 	 *
 	 * @since    1.0.0
@@ -139,20 +162,7 @@ class Everlightbox_Public {
         <?php endif ?>
 
 
-		<style>
-			#everlightbox-slider .slide img, 
-			#everlightbox-slider .slide .everlightbox-video-container, 
-			#everlightbox-slider .slide .everlightbox-inline-container {
-				max-width: <?php echo $this->options['max_width'] ?>%;
-				max-height: <?php echo $this->options['max_height'] ?>%;
-			}
 
-			<?php if($this->option_exists('round_corners', false)) : ?>
-			#everlightbox-slider .slide img {
-				border-radius:4px;
-			}
-			<?php endif ?>
-		</style>
 		<script>
 		jQuery(function () {
 			var $ = jQuery;

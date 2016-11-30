@@ -770,18 +770,34 @@
                         }
                         
                         if(plugin.settings.fullscreenIcon) {
-                            $topbarRight.append('<a title="Fullscreen" class="everlightbox-fullscreen"><i class="ev-icon-resize-full"></i></a>');
+                            $topbarRight.append('<a title="Fullscreen" data-status="off" class="everlightbox-fullscreen"><i class="ev-icon-resize-full"></i><i class="ev-icon-resize-small"></i></a>');
                             $topbarRight.find(".everlightbox-fullscreen").click(function () {
-                                var elem = document.getElementById("everlightbox-overlay");
-                                if (elem.requestFullscreen) {
-                                    elem.requestFullscreen();
-                                } else if (elem.msRequestFullscreen) {
-                                    elem.msRequestFullscreen();
-                                } else if (elem.mozRequestFullScreen) {
-                                    elem.mozRequestFullScreen();
-                                } else if (elem.webkitRequestFullscreen) {
-                                    elem.webkitRequestFullscreen();
+
+                                var status = $(this).data("status");
+                                if(status == "off") {
+                                    var elem = document.getElementById("everlightbox-overlay");
+                                    if (elem.requestFullscreen) {
+                                        elem.requestFullscreen();
+                                    } else if (elem.msRequestFullscreen) {
+                                        elem.msRequestFullscreen();
+                                    } else if (elem.mozRequestFullScreen) {
+                                        elem.mozRequestFullScreen();
+                                    } else if (elem.webkitRequestFullscreen) {
+                                        elem.webkitRequestFullscreen();
+                                    }
+                                    $(this).data("status", "on");
+                                    $(this)
+                                } else {
+                                    if (document.cancelFullScreen) {
+                                        document.cancelFullScreen();
+                                    } else if (document.mozCancelFullScreen) {
+                                        document.mozCancelFullScreen();
+                                    } else if (document.webkitCancelFullScreen) {
+                                        document.webkitCancelFullScreen();
+                                    }
+                                    $(this).data("status", "off");
                                 }
+                                $(this).toggleClass("on");
                             });
                         }
 
