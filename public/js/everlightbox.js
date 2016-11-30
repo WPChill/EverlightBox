@@ -828,7 +828,7 @@
 
                         if(plugin.settings.facebookLike) {
                             if (typeof FB != "undefined" && FB != null)
-                                FB.XFBML.parse();
+                                FB.XFBML.parse($glass.find(".everlightbox-social").get(0));
                         }
 
                         if(plugin.settings.facebookComments)
@@ -862,7 +862,7 @@
                                     } else {
                                         $topbar.append('<div class="fb-comments" data-href="'+ $img.attr("src") + '" data-width="300" data-numposts="5"></div>');
                                         if (typeof FB != "undefined" && FB != null)
-                                            FB.XFBML.parse();
+                                            FB.XFBML.parse($topbar.get(0));
                                     }                                    
                                 } else {
                                     $glass.find('.fb-comments').hide();

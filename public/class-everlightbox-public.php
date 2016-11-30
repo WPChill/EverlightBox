@@ -146,7 +146,9 @@ class Everlightbox_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function footer() { ?>
+	public function footer() {
+
+	 ?>
 
         <?php if(! $this->option_exists('no_facebook_scripts', false)) : ?>
 
@@ -271,7 +273,8 @@ class Everlightbox_Public {
 	 */
 	public function enqueue_styles() {
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/everlightbox.css', array(), $this->version, 'all' );
+		wp_register_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/everlightbox.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name );
 	}
 
 	/**
@@ -281,7 +284,9 @@ class Everlightbox_Public {
 	 */
 	public function enqueue_scripts() {
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/everlightbox.js', array( 'jquery' ), $this->version, false );
+		wp_register_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/everlightbox.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( $this->plugin_name );
+		
 		if($this->option_exists('facebook_comments', false))
 		{
 			wp_localize_script( $this->plugin_name, 'everlightbox_ajax_object', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
