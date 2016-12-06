@@ -276,6 +276,23 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
+			'name' => 'Disable buttons background',
+			'desc' => 'Disable the background behind buttons',
+			'id'   => 'disable_buttons_background',
+			'type' => 'checkbox',
+			'row_classes' => 'el-tab-1'
+		) );
+
+		$cmb_options->add_field( array(
+			'name' => 'Icon size',
+			'desc' => 'Size in pixel of the icons inside the buttons',
+			'id'   => 'icons_size',
+			'type' => 'text_small',
+			'default' => '15',
+			'row_classes' => 'el-tab-1'
+		) );
+
+		$cmb_options->add_field( array(
 			'name'    => 'Sharing',
 			'desc'    => 'Choose on which social networks users can share the photos',
 			'id'      => 'social',
