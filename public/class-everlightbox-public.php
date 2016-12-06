@@ -123,8 +123,24 @@ class Everlightbox_Public {
 	 *
 	 * @since    1.0.13
 	 */
-	public function header() { ?>
+	public function header() { 
+
+		$icon_path = plugin_dir_url( __FILE__ ) . 'css/fonts/everlightbox-icons';
+		$icon_path = apply_filters( 'everlightbox_icon_path', $icon_path );
+
+		?>
         <style>
+        	@font-face {
+				font-family: "everlightbox-icons";
+				src: url("<?php echo $icon_path ?>.eot");
+				src: url("<?php echo $icon_path ?>.eot?#iefix") format("embedded-opentype"),
+				url("<?php echo $icon_path ?>.woff") format("woff"),
+				url("<?php echo $icon_path ?>.ttf") format("truetype"),
+				url("<?php echo $icon_path ?>.svg#everlightbox-icons") format("svg");
+				font-weight: normal;
+				font-style: normal;
+
+			}
             #everlightbox-slider .slide img,
             #everlightbox-slider .slide .everlightbox-video-container,
             #everlightbox-slider .slide .everlightbox-inline-container {

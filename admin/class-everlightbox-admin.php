@@ -201,6 +201,12 @@ class Everlightbox_Admin {
 	{		
 		add_action( "cmb2_save_options-page_fields_{$this->metabox_id}", array( $this, 'settings_notices' ), 10, 2 );
 
+		$themes = array(
+				'dark' => __( 'Dark night', 'cmb2' ),
+				'white-splash' => __( 'White splash', 'cmb2' ),
+			);
+		$themes = apply_filters('everlightbox_theme_options', $themes);
+
 		$cmb_options = new_cmb2_box( array(
 			'id'      => $this->metabox_id,
 			'title'   => __( 'EverlightBox settings', 'cmb2' ),
@@ -218,10 +224,7 @@ class Everlightbox_Admin {
 			'type'     => 'select',
 			'default'  => 'custom',	
 			'row_classes' => 'el-tab-1',
-			'options'          => array(
-				'dark' => __( 'Dark night', 'cmb2' ),
-				'white-splash' => __( 'White splash', 'cmb2' ),
-			),
+			'options'          => $themes,
 		) );
 
 		$cmb_options->add_field( array(
