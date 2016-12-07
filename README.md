@@ -47,6 +47,12 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.14
+- [Add] Remove button background option
+- [Add] Icon size option
+- [Add] Replaced loading gif
+- [Fix] CSS fix for image overlapping buttons (provided by [@moxymore](https://wordpress.org/support/users/moxymore/))
+
 ### 1.0.13 
 - [Add] Exit from fullscreen view
 - [Fix] Fixed not clickable anchored buttons
