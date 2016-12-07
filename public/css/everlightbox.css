@@ -156,11 +156,17 @@ html.everlightbox-html.everlightbox-touch {
 	position: absolute;
 	right:10px;
 	top:0;
+	text-align: right;
+}
+#everlightbox-slider .slide .everlightbox-top-bar .everlightbox-right-side a,
+#everlightbox-slider .slide .everlightbox-top-bar .everlightbox-left-side a {
+	text-align: center;
 }
 #everlightbox-slider .slide .everlightbox-top-bar .everlightbox-left-side {
 	position: absolute;
 	left:10px;
 	top:0;
+	text-align: left;
 }
 /* --- END STRUCTURE --- */
 
@@ -384,6 +390,9 @@ html.everlightbox-html.everlightbox-touch {
 	height: 30px;
 	display: inline-block;
 	margin-left: 10px;
+}
+#everlightbox-slider .everlightbox-close {
+	right:0;
 }
 #everlightbox-slider .everlightbox-fullscreen .ev-icon-resize-small {
 	display: none;

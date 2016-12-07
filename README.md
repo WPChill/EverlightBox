@@ -47,6 +47,9 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.15
+- [Fix] Minor CSS fix
+
 ### 1.0.14
 - [Add] Remove button background option
 - [Add] Icon size option
