@@ -123,14 +123,45 @@ class Everlightbox_Public {
 	 *
 	 * @since    1.0.13
 	 */
-	public function header() { ?>
+	public function header() { 
+
+		$icon_path = plugin_dir_url( __FILE__ ) . 'css/fonts/everlightbox-icons';
+		$icon_path = apply_filters( 'everlightbox_icon_path', $icon_path );
+
+		?>
         <style>
+        	@font-face {
+				font-family: "everlightbox-icons";
+				src: url("<?php echo $icon_path ?>.eot");
+				src: url("<?php echo $icon_path ?>.eot?#iefix") format("embedded-opentype"),
+				url("<?php echo $icon_path ?>.woff") format("woff"),
+				url("<?php echo $icon_path ?>.ttf") format("truetype"),
+				url("<?php echo $icon_path ?>.svg#everlightbox-icons") format("svg");
+				font-weight: normal;
+				font-style: normal;
+
+			}
             #everlightbox-slider .slide img,
             #everlightbox-slider .slide .everlightbox-video-container,
             #everlightbox-slider .slide .everlightbox-inline-container {
-                max-width: <?php echo $this->options['max_width'] ?>%;
-                max-height: <?php echo $this->options['max_height'] ?>%;
+                max-width: calc(<?php echo $this->options['max_width'] ?>% - 75px);
+                max-height: calc(<?php echo $this->options['max_height'] ?>% - 75px);
             }
+
+            <?php 
+
+            	$icons_size = 15;
+            	if(isset($this->options['icons_size']))
+            		$icons_size = $this->options['icons_size'];
+            ?>
+
+            #everlightbox-slider .everlightbox-comments, 
+            #everlightbox-slider .everlightbox-close, 
+            #everlightbox-slider .everlightbox-fullscreen, 
+            #everlightbox-slider .slide .everlightbox-social .button {
+            	font-size: <?php echo $icons_size ?>px;
+            }
+
 
             <?php if($this->option_exists('round_corners', false)) : ?>
             #everlightbox-slider .slide img {
@@ -255,12 +286,11 @@ class Everlightbox_Public {
 				$sticky_buttons_css = $this->option_exists('sticky_buttons', false) ? "sticky-buttons" : "";
 				$sticky_caption_css = $this->option_exists('sticky_caption', false) ? "sticky-caption" : "";
 				$buttons_edges_css = $this->option_exists('buttons_edges', false) ? "buttons-edges" : "";
-
+				$buttons_nobg_css = $this->option_exists('disable_buttons_background', false) ? "buttons-no-bg" : "";
 			?>
 
 			$(".everlightbox-trigger").everlightbox({
-				rootCssClass: '<?php echo $this->options['theme'] . " " . $sticky_buttons_css . " " .
-				                          $sticky_caption_css . " " . $buttons_edges_css ?>',
+				rootCssClass: '<?php echo $this->options['theme']. " $sticky_buttons_css $sticky_caption_css $buttons_nobg_css $buttons_edges_css" ?>',
 				facebookIcon: <?php echo $this->option_value('social', 'facebook') ?>,
 				twitterIcon: <?php echo $this->option_value('social', 'twitter') ?>,
 				pinterestIcon: <?php echo $this->option_value('social', 'pinterest') ?>,
