@@ -301,7 +301,7 @@ html.everlightbox-html.everlightbox-touch {
 #everlightbox-slider .slide-loading {
 	background: url(../img/loader.gif) no-repeat center center;
 }
-#everlightbox-slider .fb-comments {
+#everlightbox-slider .everlightbox-top-bar .fb-comments {
 	background: #fff;
 	position: absolute;
 	top:40px;
@@ -389,12 +389,13 @@ html.everlightbox-html.everlightbox-touch {
 .everlightbox-no-close-button #everlightbox-slider .everlightbox-close {
 	display: none;
 }
-#everlightbox-slider .fb-comments {
+#everlightbox-slider .everlightbox-top-bar .fb-comments {
 	width:320px;
 	height: auto;
 }
 #everlightbox-slider .slide .everlightbox-caption {
-	position: absolute;		
+	position: absolute;
+	background:transparent;
 	color: #fff;
 	font-style: italic;
 	margin-bottom: 0;

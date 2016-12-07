@@ -245,19 +245,20 @@
                 };
 
                 $('#everlightbox-overlay').css( sliderCss );
-                $("#everlightbox-slider .slide").each(function () {
-                    $img = $(this).find("img");
+                $("#everlightbox-slider .slide").each(function (i, slide) {
+                    $img = $(slide).find("img");
                     var w = $img.width();
                     var h = $img.height();
                     var pos = $img.position();
                     if(w && h && !plugin.settings.anchorButtonsToEdges) {
-                        $(this).find(".everlightbox-glass").css({
+                        $(slide).find(".everlightbox-glass").css({
                             top: pos.top,
                             left: pos.left,
                             width: w,
                             height: h
                         });
-                    }                    
+                    }
+                    wp.hooks.applyFilters('everlightbox.setDim', $(slide), w, h, pos);
                 });
             },
 
@@ -686,6 +687,7 @@
                 }
                 $( window ).trigger( 'resize' ); // fix scroll bar visibility on desktop
                 this.setSlide( index, true );
+                wp.hooks.applyFilters('everlightbox.openSlide', index);
             },
 
             /**
@@ -857,8 +859,8 @@
                             $topbar.on("touchstart click", ".everlightbox-comments, .everlightbox-comment-count", function () {
                                 $topbarLeft.find(".everlightbox-comments").toggleClass("everlightbox-comments-active");
                                 if($topbarLeft.find(".everlightbox-comments").hasClass("everlightbox-comments-active")) {
-                                    if($glass.find(".fb-comments").length) {
-                                        $glass.find(".fb-comments").show();
+                                    if($topbar.find(".fb-comments").length) {
+                                        $topbar.find(".fb-comments").show();
                                     } else {
                                         $topbar.append('<div class="fb-comments" data-href="'+ $img.attr("src") + '" data-width="300" data-numposts="5"></div>');
                                         if (typeof FB != "undefined" && FB != null)

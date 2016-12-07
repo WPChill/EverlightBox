@@ -151,7 +151,7 @@ class Everlightbox_Admin {
 	public function menu() {
 
 		$this->options_page = add_menu_page('Settings', 'EverlightBox', 'manage_options', $this->option_key, array($this, 'page_settings'), plugin_dir_url( __FILE__ ) . '/icon.png');
-
+		do_action('everlightbox_menu');
 	}
 
 	/**

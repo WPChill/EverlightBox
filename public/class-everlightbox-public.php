@@ -138,6 +138,25 @@ class Everlightbox_Public {
             }
             <?php endif ?>
         </style>
+        <script>
+            var __everlightbox_conf = {
+                facebookIcon: <?php echo $this->option_value('social', 'facebook') ?>,
+                twitterIcon: <?php echo $this->option_value('social', 'twitter') ?>,
+                pinterestIcon: <?php echo $this->option_value('social', 'pinterest') ?>,
+                houzzIcon: <?php echo $this->option_value('social', 'houzz') ?>,
+                googleplusIcon: <?php echo $this->option_value('social', 'googleplus') ?>,
+                tumblrIcon: <?php echo $this->option_value('social', 'tumblr') ?>,
+                facebookLike: <?php echo $this->option_exists('facebook_like') ?>,
+                downloadIcon: <?php echo $this->option_exists('download') ?>,
+                fullscreenIcon: <?php echo $this->option_exists('fullscreen_icon') ?>,
+                keyboard: !<?php echo $this->option_exists('disable_keyb_nav') ?>,
+                loopAtEnd: <?php echo $this->option_exists('loop') ?>,
+                closeBg: <?php echo $this->option_exists('close_bg') ?>,
+                anchorButtonsToEdges: <?php echo $this->option_exists('buttons_edges') ?>,
+                facebookComments: <?php echo $this->option_exists('facebook_comments') ?>,
+                facebookCommentCount: <?php echo $this->option_exists('facebook_comment_count') ?>
+            };
+        </script>
     <?php
 	}
 
