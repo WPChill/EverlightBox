@@ -177,7 +177,7 @@ html.everlightbox-html.everlightbox-touch {
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-social,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-comments,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-caption {
-	opacity: 0;
+	opacity: 0;	
 }
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-fullscreen,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-close,
@@ -205,10 +205,10 @@ html.everlightbox-html.everlightbox-touch {
 	display: inline-block;
 	text-decoration: none;
 	color:#fff;
-	width: 44px;
-	height: 32px;
-	line-height: 30px;
-	padding: 0;
+	width: auto;
+	height: auto;
+	padding: 4px;
+	line-height: 1;
 	background: rgba(0, 0, 0, .5);
 	margin-bottom: 1px;
 	transition:background .2s, top .2s, opacity .2s, color .2s;
@@ -217,8 +217,14 @@ html.everlightbox-html.everlightbox-touch {
 	border-radius: 4px;
 	position: relative;
 	top:0;	
+	border-size: border-box;
 }
-
+#everlightbox-slider .everlightbox-comments i,
+#everlightbox-slider .everlightbox-close i,
+#everlightbox-slider .everlightbox-fullscreen i,
+#everlightbox-slider .slide .everlightbox-social .button i {
+	border-size: border-box;
+}
 /* buttons without background */
 #everlightbox-overlay.buttons-no-bg #everlightbox-slider .everlightbox-comments,
 #everlightbox-overlay.buttons-no-bg #everlightbox-slider .everlightbox-close,
@@ -252,7 +258,8 @@ html.everlightbox-html.everlightbox-touch {
 #everlightbox-slider .slide .everlightbox-social .button {
 	display: inline-block;
 	margin-right: 4px;
-	height: 28px;
+	box-sizing: border-box;
+	padding: 4px;
 }
 #everlightbox-slider .slide .everlightbox-social .button.last-element {
 	margin-right: 0;
@@ -262,7 +269,7 @@ html.everlightbox-html.everlightbox-touch {
 #everlightbox-slider .everlightbox-comments,
 #everlightbox-slider .everlightbox-close {
 	font-size: 24px;
-    line-height: 35px;
+    line-height: 1;
 }
 #everlightbox-slider .everlightbox-fullscreen:hover,
 #everlightbox-slider .everlightbox-comments.everlightbox-comments-active,
@@ -366,13 +373,11 @@ html.everlightbox-html.everlightbox-touch {
 }
 
 #everlightbox-prev {
-	background-position: -32px 13px;
 	left:25px;
 	text-align: left;
 }
 
 #everlightbox-next {
-	background-position: -78px 13px;
 	right:25px;
 	text-align: right;
 }
@@ -384,10 +389,6 @@ html.everlightbox-html.everlightbox-touch {
 
 #everlightbox-slider .everlightbox-fullscreen,
 #everlightbox-slider .everlightbox-close {
-	background-position: 15px 12px;
-	font-size:15px;
-	width:30px;
-	height: 30px;
 	display: inline-block;
 	margin-left: 10px;
 }

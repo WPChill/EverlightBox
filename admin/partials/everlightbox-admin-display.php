@@ -24,7 +24,7 @@
 	<?php echo cmb2_metabox_form($this->metabox_id, $this->option_key) ?>
 
 	<div id="greentreelabs-plugins" style="display:none" class="el-tab-galleries el-to-hide">
-		<p>Try also our awesome galleries:</p>
+		<p>Try also my awesome galleries:</p>
 		<div class="gtl-item">
 			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/final-tiles.jpg">
 			<div class="text">
