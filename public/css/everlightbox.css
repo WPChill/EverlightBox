@@ -176,7 +176,8 @@ html.everlightbox-html.everlightbox-touch {
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-close,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-social,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-comments,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-caption {
+#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-caption,
+#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .everlightbox-comment-count {
 	opacity: 0;	
 }
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-fullscreen,
@@ -184,11 +185,13 @@ html.everlightbox-html.everlightbox-touch {
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-social,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-comments,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-caption,
+#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-comment-count,
 #everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-fullscreen,
 #everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-close,
 #everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-social,
 #everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-comments,
-#everlightbox-overlay.everlightbox-no-mobile.sticky-caption #everlightbox-slider .slide .everlightbox-glass .everlightbox-caption {
+#everlightbox-overlay.everlightbox-no-mobile.sticky-caption #everlightbox-slider .slide .everlightbox-glass .everlightbox-caption,
+#everlightbox-overlay.everlightbox-no-mobile.sticky-caption #everlightbox-slider .slide .everlightbox-glass .everlightbox-comment-count {
 	opacity: 1;
 }
 /* end no mobile */

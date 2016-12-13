@@ -286,10 +286,12 @@ class Everlightbox_Public {
 				$sticky_caption_css = $this->option_exists('sticky_caption', false) ? "sticky-caption" : "";
 				$buttons_edges_css = $this->option_exists('buttons_edges', false) ? "buttons-edges" : "";
 				$buttons_nobg_css = $this->option_exists('disable_buttons_background', false) ? "buttons-no-bg" : "";
+				$root_classes = "$sticky_buttons_css $sticky_caption_css $buttons_nobg_css $buttons_edges_css";
+				$root_classes = apply_filters( 'everlightbox_css_classes', $root_classes);
 			?>
 
 			$(".everlightbox-trigger").everlightbox({
-				rootCssClass: '<?php echo $this->options['theme']. " $sticky_buttons_css $sticky_caption_css $buttons_nobg_css $buttons_edges_css" ?>',
+				rootCssClass: '<?php echo $this->options['theme']. " " . $root_classes ?>',
 				facebookIcon: <?php echo $this->option_value('social', 'facebook') ?>,
 				twitterIcon: <?php echo $this->option_value('social', 'twitter') ?>,
 				pinterestIcon: <?php echo $this->option_value('social', 'pinterest') ?>,

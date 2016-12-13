@@ -258,7 +258,8 @@
                             height: h
                         });
                     }
-                    wp.hooks.applyFilters('everlightbox.setDim', $(slide), w, h, pos);
+                    var data = { slide: $(slide), width: w, height: h, position: pos };
+                    wp.hooks.applyFilters('everlightbox.setDim', data);
                 });
             },
 
