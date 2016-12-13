@@ -172,26 +172,14 @@ html.everlightbox-html.everlightbox-touch {
 
 /* --- BUTTONS --- */
 /* no mobile */
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-fullscreen,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-close,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-social,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-comments,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-caption,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .everlightbox-comment-count {
+#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-top-bar,
+#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-social {
 	opacity: 0;	
 }
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-fullscreen,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-close,
+#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-top-bar,
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-social,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-comments,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-caption,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-comment-count,
-#everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-fullscreen,
-#everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-close,
-#everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-social,
-#everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-comments,
-#everlightbox-overlay.everlightbox-no-mobile.sticky-caption #everlightbox-slider .slide .everlightbox-glass .everlightbox-caption,
-#everlightbox-overlay.everlightbox-no-mobile.sticky-caption #everlightbox-slider .slide .everlightbox-glass .everlightbox-comment-count {
+#everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-top-bar,
+#everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-social {
 	opacity: 1;
 }
 /* end no mobile */
@@ -201,10 +189,7 @@ html.everlightbox-html.everlightbox-touch {
 	position: absolute;
 	z-index: 10;
 }
-#everlightbox-slider .everlightbox-comments,
-#everlightbox-slider .everlightbox-close,
-#everlightbox-slider .everlightbox-fullscreen,
-#everlightbox-slider .slide .everlightbox-social .button {
+#everlightbox-slider .slide .everlightbox-button {
 	display: inline-block;
 	text-decoration: none;
 	color:#fff;
@@ -226,15 +211,13 @@ html.everlightbox-html.everlightbox-touch {
 #everlightbox-slider .everlightbox-comments i,
 #everlightbox-slider .everlightbox-close i,
 #everlightbox-slider .everlightbox-fullscreen i,
-#everlightbox-slider .slide .everlightbox-social .button i {
+#everlightbox-slider .slide .everlightbox-social .everlightbox-button i {
 	padding: 4px 4px 2px 4px;
 	display: block;
 }
 /* buttons without background */
 #everlightbox-overlay.buttons-no-bg #everlightbox-slider .everlightbox-comments,
-#everlightbox-overlay.buttons-no-bg #everlightbox-slider .everlightbox-close,
-#everlightbox-overlay.buttons-no-bg #everlightbox-slider .everlightbox-fullscreen,
-#everlightbox-overlay.buttons-no-bg #everlightbox-slider .slide .everlightbox-social .button {
+#everlightbox-overlay.buttons-no-bg #everlightbox-slider .slide .everlightbox-button {
 	background: transparent;
 }
 #everlightbox-overlay.buttons-no-bg #everlightbox-slider .everlightbox-fullscreen:hover,
@@ -260,13 +243,13 @@ html.everlightbox-html.everlightbox-touch {
 	right: 0;
 	left: 0;
 }
-#everlightbox-slider .slide .everlightbox-social .button {
+#everlightbox-slider .slide .everlightbox-social .everlightbox-button {
 	display: inline-block;
 	margin-right: 4px;
 	box-sizing: border-box;
 	padding: 4px;
 }
-#everlightbox-slider .slide .everlightbox-social .button.last-element {
+#everlightbox-slider .slide .everlightbox-social .everlightbox-button.last-element {
 	margin-right: 0;
 }
 

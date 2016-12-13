@@ -773,7 +773,7 @@
                         }
                         
                         if(plugin.settings.fullscreenIcon) {
-                            $topbarRight.append('<a title="Fullscreen" data-status="off" class="everlightbox-fullscreen"><i class="ev-icon-resize-full"></i><i class="ev-icon-resize-small"></i></a>');
+                            $topbarRight.append('<a title="Fullscreen" data-status="off" class="everlightbox-fullscreen everlightbox-button"><i class="ev-icon-resize-full"></i><i class="ev-icon-resize-small"></i></a>');
                             $topbarRight.find(".everlightbox-fullscreen").click(function () {
 
                                 var status = $(this).data("status");
@@ -804,25 +804,25 @@
                             });
                         }
 
-                        $topbarRight.append('<a class="everlightbox-close"><i class="ev-icon-cancel"></i></a>');
+                        $topbarRight.append('<a class="everlightbox-close everlightbox-button"><i class="ev-icon-cancel"></i></a>');
 
                         var social = [];
                         if(plugin.settings.facebookIcon)
-                            social.push('<a title="Share on Facebook" class="button everlightbox-facebook"><i class="ev-icon-facebook"></i></a>');
+                            social.push('<a title="Share on Facebook" class="everlightbox-button everlightbox-facebook"><i class="ev-icon-facebook"></i></a>');
                         if(plugin.settings.pinterestIcon)
-                            social.push('<a title="Share on Pinterest" class="button everlightbox-pinterest"><i class="ev-icon-pinterest"></i></a>');
+                            social.push('<a title="Share on Pinterest" class="everlightbox-button everlightbox-pinterest"><i class="ev-icon-pinterest"></i></a>');
                         if(plugin.settings.tumblrIcon)
-                            social.push('<a title="Share on Tumblr" class="button everlightbox-tumblr"><i class="ev-icon-tumblr"></i></a>');
+                            social.push('<a title="Share on Tumblr" class="everlightbox-button everlightbox-tumblr"><i class="ev-icon-tumblr"></i></a>');
                         if(plugin.settings.twitterIcon)
-                            social.push('<a title="Share on Twitter" class="button everlightbox-twitter"><i class="ev-icon-twitter"></i></a>');
+                            social.push('<a title="Share on Twitter" class="everlightbox-button everlightbox-twitter"><i class="ev-icon-twitter"></i></a>');
                         if(plugin.settings.houzzIcon)
-                            social.push('<a share="Share on Houzz" class="button everlightbox-houzz"><i class="ev-icon-houzz"></i></a>');
+                            social.push('<a share="Share on Houzz" class="everlightbox-button everlightbox-houzz"><i class="ev-icon-houzz"></i></a>');
                         if(plugin.settings.googleplusIcon)
-                            social.push('<a title="Share on Google+" class="button everlightbox-googleplus"><i class="ev-icon-gplus"></i></a>');
+                            social.push('<a title="Share on Google+" class="everlightbox-button everlightbox-googleplus"><i class="ev-icon-gplus"></i></a>');
                         if(plugin.settings.downloadIcon)
-                            social.push('<a title="Download image" href="'+ this.attr("src") +'" download class="button everlightbox-download"><i class="ev-icon-install"></i></a>');
+                            social.push('<a title="Download image" href="'+ this.attr("src") +'" download class="everlightbox-button everlightbox-download"><i class="ev-icon-install"></i></a>');
                         if(plugin.settings.facebookLike)
-                            social.push('<div class="button fb-like" data-href="'+ this.attr("src") +'" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>');
+                            social.push('<div class="everlightbox-button fb-like" data-href="'+ this.attr("src") +'" data-layout="everlightbox-button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>');
 
                         if(social.length) {
                             $glass.append("<div class='everlightbox-social'>" + social.join('') + "</div>");
@@ -836,7 +836,7 @@
 
                         if(plugin.settings.facebookComments)
                         {
-                            $topbarLeft.append('<a title="Show comments" class="everlightbox-comments"><i class="ev-icon-commenting-o"></i></a>');
+                            $topbarLeft.append('<a title="Show comments" class="everlightbox-comments everlightbox-button"><i class="ev-icon-commenting-o"></i></a>');
 
                             if(plugin.settings.facebookCommentCount)  {
                                 $.get(everlightbox_ajax_object.ajaxurl, {
