@@ -208,10 +208,7 @@ html.everlightbox-html.everlightbox-touch {
 	border-size: border-box;
 	float: none;
 }
-#everlightbox-slider .everlightbox-comments i,
-#everlightbox-slider .everlightbox-close i,
-#everlightbox-slider .everlightbox-fullscreen i,
-#everlightbox-slider .slide .everlightbox-social .everlightbox-button i {
+#everlightbox-slider .everlightbox-button i {
 	padding: 4px 4px 2px 4px;
 	display: block;
 }
