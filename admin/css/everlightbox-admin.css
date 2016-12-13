@@ -19,6 +19,9 @@ h1 {
 .cmb2-wrap .cmb-row {
     border-bottom:1px solid #fff;
 }
+.cmb2-wrap .cmb-row.disabled .cmb-th {
+    color:#999;
+}
 .cmb-th {
     padding-top: 12px;
 }

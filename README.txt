@@ -4,7 +4,7 @@ Donate link: http://www.greentreelabs.net
 Tags: lightbox, gallery, social, social sharing, images, image gallery, lightbox image
 Requires at least: 3.0.1
 Tested up to: 4.7
-Stable tag: 1.0.15
+Stable tag: 1.0.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,9 @@ If you're not familiar with Git you may write on the [Gitter channel](https://gi
 7. "White splash" theme
 
 == Changelog ==
+
+= 1.0.16 =
+* [Add] Wider support for captions
 
 = 1.0.15 =
 * [Fix] Minor CSS fix

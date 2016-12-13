@@ -218,12 +218,14 @@ html.everlightbox-html.everlightbox-touch {
 	position: relative;
 	top:0;	
 	border-size: border-box;
+	float: none;
 }
 #everlightbox-slider .everlightbox-comments i,
 #everlightbox-slider .everlightbox-close i,
 #everlightbox-slider .everlightbox-fullscreen i,
 #everlightbox-slider .slide .everlightbox-social .button i {
-	border-size: border-box;
+	padding: 4px 4px 2px 4px;
+	display: block;
 }
 /* buttons without background */
 #everlightbox-overlay.buttons-no-bg #everlightbox-slider .everlightbox-comments,
@@ -244,7 +246,7 @@ html.everlightbox-html.everlightbox-touch {
 #everlightbox-slider .everlightbox-comment-count {
 	color:#fff;
 	position:relative;
-	top:-6px;
+	top:-1px;
     display: inline-block;
     line-height:1;
     margin-left: 6px;
