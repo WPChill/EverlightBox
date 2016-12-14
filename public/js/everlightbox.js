@@ -160,6 +160,14 @@
             }
         };
 
+        plugin.next = function () {
+            ui.getNext();
+        };
+
+        plugin.prev = function () {
+            ui.getPrev();
+        };
+
         ui = {
 
             /**
@@ -179,6 +187,7 @@
                 if ( plugin.settings.afterOpen ) {
                     plugin.settings.afterOpen(index);
                 }
+                $(window).bind('everlightbox.next', this.getNext);
             },
 
             /**
@@ -757,6 +766,9 @@
                         $glass.append("<div class='everlightbox-top-bar'></div>");
                         var $topbar = $glass.find(".everlightbox-top-bar");
 
+                        $glass.append("<div class='everlightbox-bottom-bar'></div>");
+                        var $bottombar = $glass.find(".everlightbox-bottom-bar");
+
                         $topbar.append("<div class='everlightbox-right-side'></div>");
                         var $topbarRight = $topbar.find(".everlightbox-right-side");
 
@@ -825,8 +837,8 @@
                             social.push('<div class="everlightbox-button fb-like" data-href="'+ this.attr("src") +'" data-layout="everlightbox-button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>');
 
                         if(social.length) {
-                            $glass.append("<div class='everlightbox-social'>" + social.join('') + "</div>");
-                            $glass.find(".everlightbox-social").children().last().addClass("last-element");
+                            $bottombar.append("<div class='everlightbox-social'>" + social.join('') + "</div>");
+                            $bottombar.find(".everlightbox-social").children().last().addClass("last-element");
                         }
 
                         if(plugin.settings.facebookLike) {
@@ -1114,7 +1126,7 @@
     $.fn.everlightbox = function( options ) {
 
         if ( ! $.data( this, '_everlightbox' ) ) {
-            var everlightbox = new $.everlightbox( this, options );
+            window.everlightbox = new $.everlightbox( this, options );
             this.data( '_everlightbox', everlightbox );
         }
         return this.data( '_everlightbox' );

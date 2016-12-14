@@ -145,12 +145,17 @@ html.everlightbox-html.everlightbox-touch {
     position: static;
     height: 0 !important;
 }
-#everlightbox-slider .slide .everlightbox-top-bar {
+#everlightbox-slider .slide .everlightbox-top-bar,
+#everlightbox-slider .slide .everlightbox-bottom-bar {
 	position: absolute;
 	top:10px;
 	left: 0;
 	right: 0;
 	z-index: 10;
+}
+#everlightbox-slider .slide .everlightbox-bottom-bar {
+	top: auto;
+	bottom: 10px;
 }
 #everlightbox-slider .slide .everlightbox-top-bar .everlightbox-right-side {
 	position: absolute;
@@ -173,13 +178,13 @@ html.everlightbox-html.everlightbox-touch {
 /* --- BUTTONS --- */
 /* no mobile */
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-top-bar,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-social {
+#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass .everlightbox-bottom-bar {
 	opacity: 0;	
 }
 #everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-top-bar,
-#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-social,
+#everlightbox-overlay.everlightbox-no-mobile #everlightbox-slider .slide .everlightbox-glass:hover .everlightbox-bottom-bar,
 #everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-top-bar,
-#everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-social {
+#everlightbox-overlay.everlightbox-no-mobile.sticky-buttons #everlightbox-slider .slide .everlightbox-glass .everlightbox-bottom-bar {
 	opacity: 1;
 }
 /* end no mobile */
@@ -236,7 +241,7 @@ html.everlightbox-html.everlightbox-touch {
 }
 #everlightbox-slider .slide .everlightbox-social {
 	position: absolute;
-	bottom: 10px;
+	bottom: 0;
 	right: 0;
 	left: 0;
 }
