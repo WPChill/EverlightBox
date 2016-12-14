@@ -525,7 +525,7 @@ html.everlightbox-html.everlightbox-touch {
 /* Skin
 --------------------------*/
 #everlightbox-overlay {
-	background: rgba(0, 0, 0, .8);
+	background-color: rgba(0, 0, 0, .8);
 }
 
 
@@ -533,7 +533,7 @@ html.everlightbox-html.everlightbox-touch {
 
 /* WHITE SPLASH */
 #everlightbox-overlay.everlightbox-theme-white-splash {
-	background: rgba(255, 255, 255, .8);
+	background-color: rgba(255, 255, 255, .8);
 }
 #everlightbox-overlay.everlightbox-theme-white-splash #everlightbox-slider .slide img, 
 #everlightbox-overlay.everlightbox-theme-white-splash #everlightbox-slider .slide .everlightbox-video-container, 
