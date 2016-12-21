@@ -8,8 +8,7 @@ Stable tag: 1.0.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Lightbox plugin free with social features: you can share images and comments them too.
-It works smoothly on all mobile devices.
+Lightbox gallery with social features: share images and add facebook comments. It works smoothly on all mobile devices. Fast and safe. 
 
 == Description ==
 
