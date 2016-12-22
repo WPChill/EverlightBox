@@ -1,6 +1,6 @@
 === Lightbox - EverlightBox Gallery ===
 Contributors: GreenTreeLabs
-Donate link: http://www.greentreelabs.net
+Donate link: http://amzn.eu/5SP6qpj 
 Tags: lightbox, gallery, social, social sharing, images, image gallery, lightbox image
 Requires at least: 3.0.1
 Tested up to: 4.7
@@ -31,6 +31,7 @@ I wait for your pull requests!
 
 [EverlightBox website](http://everlightbox.io)
 
+If you really like this plugin and you don't know how to say "thanks!" then you may consider making a gift from my [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 
 == Installation ==
 
@@ -77,6 +78,10 @@ In order to activate EverlightBox with these plugins you need to set the field "
 
 Yes! Fork the project from [EverlightBox Github](https://github.com/GreenTreeLabs/EverlightBox) repository.
 If you're not familiar with Git you may write on the [Gitter channel](https://gitter.im/EverlightBox/Features).
+
+= I love this plugin! Can I send a donation? =
+
+Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 
 == Screenshots ==
 

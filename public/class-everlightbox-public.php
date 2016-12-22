@@ -156,7 +156,7 @@ class Everlightbox_Public {
             ?>
 
             #everlightbox-slider .everlightbox-comments, 
-            #everlightbox-slider .slide .button {
+            #everlightbox-slider .slide .everlightbox-button {
             	font-size: <?php echo $icons_size ?>px;
             }
 
