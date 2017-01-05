@@ -59,7 +59,7 @@ var EverlightBoxTabs = function () {
 		});
         $("#el-tabs a:first").addClass("active");
 
-		$(".cmb2-wrap").append($("#greentreelabs-plugins"));
+		$(".cmb2-wrap").append($(".everlightbox-plugins"));
 
 		$("#el-tabs a").click(function () {
 			$("#el-tabs a").removeClass("active");

@@ -23,8 +23,26 @@
     </script>
 	<?php echo cmb2_metabox_form($this->metabox_id, $this->option_key) ?>
 
-	<div id="greentreelabs-plugins" style="display:none" class="el-tab-galleries el-to-hide">
-		<p>Try also my awesome galleries:</p>
+	<div id="evbox-addons" style="display:none" class="el-tab-addons el-to-hide everlightbox-plugins">
+		<div class="gtl-item evpropack">
+			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/evpropack.png">
+			<div class="text">
+				<h3>EverlightBox Pro Pack</h3>
+				<p>Plugins bundle containing:</p>
+				<ul>
+					<li><strong>Facebook Comment</strong> sidebar</li>
+					<li>2 professional <strong>icon sets</strong></li>
+					<li>3 advanced <strong>themes</strong></li>
+					<li>16 <strong>background</strong> patterns</li>
+					<li><strong>dedicated support</strong>.</li>
+				</ul>
+				<a class="button" href="https://goo.gl/3H5ZQj">Read more</a>
+			</div>
+		</div>		
+	</div>
+
+	<div id="greentreelabs-plugins" style="display:none" class="el-tab-galleries el-to-hide everlightbox-plugins">
+		<p>Image galleries:</p>
 		<div class="gtl-item">
 			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/final-tiles.jpg">
 			<div class="text">

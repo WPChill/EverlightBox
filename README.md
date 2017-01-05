@@ -47,6 +47,9 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.17
+- Addons tab in admin panel
+
 ### 1.0.16
 - [Add] Wider support for captions
 
