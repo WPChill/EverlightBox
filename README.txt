@@ -4,7 +4,7 @@ Donate link: http://amzn.eu/5SP6qpj
 Tags: lightbox, gallery, social, social sharing, images, image gallery, lightbox image
 Requires at least: 3.0.1
 Tested up to: 4.7
-Stable tag: 1.0.18
+Stable tag: 1.0.19
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,9 @@ Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 7. "White splash" theme
 
 == Changelog ==
+
+= 1.0.19 =
+* [Fix] Committed al changed files in 1.0.18
 
 = 1.0.18 =
 * [Fix] Fullscreen on mobile

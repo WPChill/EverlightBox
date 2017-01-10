@@ -786,7 +786,7 @@
                         
                         if(plugin.settings.fullscreenIcon) {
                             $topbarRight.append('<a title="Fullscreen" data-status="off" class="everlightbox-fullscreen everlightbox-button"><i class="ev-icon-resize-full"></i><i class="ev-icon-resize-small"></i></a>');
-                            $topbarRight.find(".everlightbox-fullscreen").click(function () {
+                            $topbarRight.find(".everlightbox-fullscreen").on("touch click", function () {
 
                                 var status = $(this).data("status");
                                 if(status == "off") {
