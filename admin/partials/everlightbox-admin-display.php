@@ -24,11 +24,44 @@
 	<?php echo cmb2_metabox_form($this->metabox_id, $this->option_key) ?>
 
 	<div id="evbox-addons" style="display:none" class="el-tab-addons el-to-hide everlightbox-plugins">
+		<div class="gtl-item">
+			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/ev-facebook.jpg">
+			<div class="text">
+				<h3>Facebook Comment Sidebar</h3>
+				<p>Facebook Comment Sidebar is a useful tool to add 
+					Facebook comments on the right side of your photos.</p>
+				<a class="button" href="https://goo.gl/IlSfLR">Read more</a>
+			</div>
+		</div>
+		<div class="gtl-item">
+			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/ev-theme.jpg">
+			<div class="text">
+				<h3>Themes pack</h3>
+				<p>Add 3 additional themes for EverlightBox</p>
+				<a class="button" href="https://goo.gl/KyOLJi">Read more</a>
+			</div>
+		</div>
+		<div class="gtl-item">
+			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/ev-icons.jpg">
+			<div class="text">
+				<h3>Icons pack</h3>
+				<p>Add 2 additional professional icon sets</p>
+				<a class="button" href="https://www.greentreelabs.net/all-downloads/everlightbox-icons-pack/?utm_source=everlightbox&utm_medium=button">Read more</a>
+			</div>
+		</div>
+		<div class="gtl-item">
+			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/ev-background.jpg">
+			<div class="text">
+				<h3>Background patterns</h3>
+				<p>Add 16 baground patterns to EverlightBox</p>
+				<a class="button" href="https://www.greentreelabs.net/all-downloads/everlightbox-background-patterns/?utm_source=everlightbox&utm_medium=button">Read more</a>
+			</div>
+		</div>
 		<div class="gtl-item evpropack">
 			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/evpropack.png">
 			<div class="text">
 				<h3>EverlightBox Pro Pack</h3>
-				<p>Plugins bundle containing:</p>
+				<p>Save 50% with this bundle. Get instantly:</p>
 				<ul>
 					<li><strong>Facebook Comment</strong> sidebar</li>
 					<li>2 professional <strong>icon sets</strong></li>

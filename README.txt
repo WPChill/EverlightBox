@@ -1,14 +1,14 @@
 === Lightbox - EverlightBox Gallery ===
 Contributors: GreenTreeLabs
 Donate link: http://amzn.eu/5SP6qpj 
-Tags: lightbox, gallery, social, social sharing, images, image gallery, lightbox image
+Tags: lightbox, gallery, social, social sharing, images, image gallery, lightbox image, video gallery, video lightbox, video
 Requires at least: 3.0.1
 Tested up to: 4.7
-Stable tag: 1.0.19
+Stable tag: 1.0.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Lightbox gallery with social features: share images and add facebook comments. It works smoothly on all mobile devices. Fast and safe. 
+Lightbox gallery with social features: share images and add facebook comments. It works smoothly on all mobile devices. Fast and safe. It supports video too.
 
 == Description ==
 
@@ -66,13 +66,26 @@ Yes, sure!
 
 Yes it is. You can even use swipe gestures to browse all the images.
 
+= Can I show a video inside EverlightBox? =
+
+Yes sure! EverlightBox natively supports YouTube and Vimeo.
+
 = Can I share the image I'm currently viewing? =
 
 Yes, you can do it when you share the image on Facebook, Pinterest and Houzz. The other social networks doesn't have this feature.
 
 = How do activate EverlightBox with Final Tiles Gallery or Modula Gallery? =
 
-In order to activate EverlightBox with these plugins you need to set the field "Lightbox & Links" to "Direct link to image".
+Final Tiles Gallery and Modula Gallery have a native support to EverlightBox so you only need to select "EverlightBox" from the lightbox menu.
+
+= How do activate EverlightBox with NextGen gallery? =
+
+You'll need to disable the default lightbox. Go to Gallery > Other options > Lightbox effects and set "What effect would you like to use?" to "None"
+
+= How do activate EverlightBox with Envira gallery? =
+
+You'll need to disable the default lightbox. Go to your gallery settings, click the "Lightbox" panel and uncheck the "Enable Lightbox?" option.
+
 
 = May I contribute? =
 
@@ -95,8 +108,12 @@ Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 
 == Changelog ==
 
+= 1.0.20 =
+* [Fix] Fullscreen on mobile
+* [Add] New add-ons in settings panel
+
 = 1.0.19 =
-* [Fix] Committed al changed files in 1.0.18
+* [Fix] Committed all changed files in 1.0.18
 
 = 1.0.18 =
 * [Fix] Fullscreen on mobile
@@ -161,6 +178,16 @@ Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 * First release!
 
 == Upgrade Notice ==
+
+= 1.0.20 =
+* [Fix] Fullscreen on mobile
+* [Add] New add-ons in settings panel
+
+= 1.0.19 =
+* [Fix] Committed all changed files in 1.0.18
+
+= 1.0.18 =
+* [Fix] Fullscreen on mobile
 
 = 1.0.17 =
 * Addons tab in admin panel

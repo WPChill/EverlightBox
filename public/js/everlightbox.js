@@ -22,7 +22,6 @@
                 useCSS : true,
                 useSVG : true,
                 initialIndexOnArray : 0,
-                videoMaxWidth : 1140,
                 vimeoColor : 'cccccc',
                 beforeOpen: null,
                 afterOpen: null,
@@ -548,11 +547,9 @@
                     } else { // Top and bottom bars have been removed on touchable devices
                         // tap
                         if ( ! bars.hasClass( 'visible-bars' ) ) {
-                            $this.showBars();
                             $this.setTimeout();
                         } else {
                             $this.clearTimeout();
-                            $this.hideBars();
                         }
                     }
 
@@ -982,7 +979,7 @@
                     iframe = '<iframe width="560" height="315" src="' + url + '" frameborder="0" allowfullscreen></iframe>';
                 }
 
-                return '<div class="everlightbox-video-container" style="max-width:' + plugin.settings.videoMaxWidth + 'px"><div class="everlightbox-video">' + iframe + '</div></div>';
+                return '<div class="everlightbox-video-container"><div class="everlightbox-video">' + iframe + '</div></div>';
             },
 
             /**

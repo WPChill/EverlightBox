@@ -168,7 +168,7 @@ class Everlightbox_Admin {
 
 		apply_filters('everlightbox_additional_tabs', $tabs);
 
-		$tabs->add("addons", "Addons");
+		$tabs->add("addons", "Add-ons");
 		$tabs->add("galleries", "Galleries");		
 
 		include "partials/everlightbox-admin-display.php";

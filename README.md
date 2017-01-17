@@ -47,6 +47,10 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.20
+- [Fix] Fullscreen on mobile
+- [Add] New add-ons in settings panel
+
 ### 1.0.19
 - [Fix] Committed al changed files in 1.0.18
 
