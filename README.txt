@@ -4,7 +4,7 @@ Donate link: http://amzn.eu/5SP6qpj
 Tags: lightbox, gallery, social, social sharing, images, image gallery, lightbox image, video gallery, video lightbox, video
 Requires at least: 3.0.1
 Tested up to: 4.7
-Stable tag: 1.0.20
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,9 @@ Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 
 == Changelog ==
 
+= 1.0.21 =
+* [Fix] Fullscreen on mobile (yet once!)
+
 = 1.0.20 =
 * [Fix] Fullscreen on mobile
 * [Add] New add-ons in settings panel
@@ -178,6 +181,9 @@ Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 * First release!
 
 == Upgrade Notice ==
+
+= 1.0.21 =
+* [Fix] Fullscreen on mobile (yet once!)
 
 = 1.0.20 =
 * [Fix] Fullscreen on mobile
