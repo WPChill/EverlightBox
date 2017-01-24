@@ -47,7 +47,8 @@
                 facebookComments: false,
                 closeBg: false,
                 anchorButtonsToEdges: false,
-                rootCssClass: ''
+                rootCssClass: '',
+                facebookAppId: '1213605408691751'
             },
 
             plugin = this,
@@ -332,7 +333,7 @@
                     var text = $this.getCurrentTitle();
                     var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
 
-                    var url = "https://www.facebook.com/dialog/feed?app_id=1213605408691751&"+
+                    var url = "https://www.facebook.com/dialog/feed?app_id=&"+plugin.settings.facebookAppId+
                         "link="+encodeURIComponent(location.href)+"&" +
                         "display=popup&"+
                         "name="+encodeURIComponent(document.title)+"&"+

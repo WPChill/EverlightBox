@@ -183,7 +183,8 @@ class Everlightbox_Public {
                 closeBg: <?php echo $this->option_exists('close_bg') ?>,
                 anchorButtonsToEdges: <?php echo $this->option_exists('buttons_edges') ?>,
                 facebookComments: <?php echo $this->option_exists('facebook_comments') ?>,
-                facebookCommentCount: <?php echo $this->option_exists('facebook_comment_count') ?>
+                facebookCommentCount: <?php echo $this->option_exists('facebook_comment_count') ?>,
+                facebookAppId: '<?php echo $this->options['facebook_app_id'] ?>'
             };
         </script>
     <?php

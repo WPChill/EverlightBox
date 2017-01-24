@@ -319,6 +319,14 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
+			'name' => 'Facebook App ID',
+			'desc' => '<br><br>By default EverlightBox uses its own App ID.<br>It\'s highly recommended you add your own App ID: <a href="http://www.hyperarts.com/blog/how-to-create-facebook-application-to-get-an-app-id-for-your-website/" target="_blank">Read more on using your own Facebook App ID</a>',
+			'id'   => 'facebook_app_id',
+			'type' => 'text_small',
+			'row_classes' => 'el-tab-3'
+		) );
+
+		$cmb_options->add_field( array(
 			'name' => 'Enable Facebook comments',
 			'desc' => 'Let users comments your photos',
 			'id'   => 'facebook_comments',
