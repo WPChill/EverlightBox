@@ -9,7 +9,7 @@
  * Plugin Name:       EverlightBox
  * Plugin URI:        everlightbox
  * Description:       Light and stylish lightbox for WordPress
- * Version:           1.0.22
+ * Version:           1.0.23
  * Author:            GreenTreeLabs
  * Author URI:        http://www.greentreelabs.net
  * License:           GPL-2.0+
@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define("EVERLIGHTBOX_VERSION", "1.0.22");
+define("EVERLIGHTBOX_VERSION", "1.0.23");
 
 
 function activate_everlightbox() {	
