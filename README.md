@@ -47,6 +47,9 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.23
+- [Add] Facebook custom App ID
+
 ### 1.0.22
 - [Add] Support for FooGallery title
 

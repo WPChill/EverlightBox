@@ -337,7 +337,7 @@
                     var text = $this.getCurrentTitle();
                     var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
 
-                    var url = "https://www.facebook.com/dialog/feed?app_id=&"+plugin.settings.facebookAppId+
+                    var url = "https://www.facebook.com/dialog/feed?app_id="+plugin.settings.facebookAppId+"&"+
                         "link="+encodeURIComponent(location.href)+"&" +
                         "display=popup&"+
                         "name="+encodeURIComponent(document.title)+"&"+

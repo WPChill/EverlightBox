@@ -44,7 +44,8 @@ class Everlightbox {
 				'facebook_comments' => 'on',
 				'sticky_caption' => 'on',
 				'sticky_buttons' => 'on',
-				'theme' => 'dark'
+				'theme' => 'dark',
+				'facebook_app_id' => '1213605408691751'
 			);
 
 	/**
