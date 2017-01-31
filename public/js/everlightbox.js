@@ -140,6 +140,10 @@
                             title = $( this ).attr( 'title' );
                         }
 
+                        if ( !title && $( this ).attr( 'data-caption-title' ) ) {
+                            title = $( this ).attr( 'data-caption-title' );
+                        }
+
 
                         if ( $( this ).attr( 'href' ) ) {
                             href = $( this ).attr( 'href' );

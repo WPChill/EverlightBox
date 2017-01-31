@@ -3,7 +3,7 @@ Contributors: GreenTreeLabs
 Donate link: http://amzn.eu/5SP6qpj 
 Tags: lightbox, gallery, social, social sharing, images, image gallery, lightbox image, video gallery, video lightbox, video
 Requires at least: 3.0.1
-Tested up to: 4.7
+Tested up to: 4.7.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -86,6 +86,10 @@ You'll need to disable the default lightbox. Go to Gallery > Other options > Lig
 
 You'll need to disable the default lightbox. Go to your gallery settings, click the "Lightbox" panel and uncheck the "Enable Lightbox?" option.
 
+= How do activate EverlightBox with FooGallery? =
+
+Just install EverlightBox and don't activate a FooGallery lightbox.
+
 
 = May I contribute? =
 
@@ -107,6 +111,9 @@ Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 7. "White splash" theme
 
 == Changelog ==
+
+= 1.0.22 =
+* [Add] Support for FooGallery title
 
 = 1.0.21 =
 * [Fix] Fullscreen on mobile (yet once!)
@@ -181,6 +188,9 @@ Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 * First release!
 
 == Upgrade Notice ==
+
+= 1.0.22 =
+* [Add] Support for FooGallery title
 
 = 1.0.21 =
 * [Fix] Fullscreen on mobile (yet once!)

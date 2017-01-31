@@ -47,6 +47,9 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.22
+- [Add] Support for FooGallery title
+
 ### 1.0.21
 - [Fix] Fullscreen on mobile (yet once!)
 
