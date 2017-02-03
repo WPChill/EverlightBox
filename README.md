@@ -47,6 +47,9 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.24
+- [Fix] Supressed notice when disabling Facebook comments
+
 ### 1.0.23
 - [Add] Facebook custom App ID
 

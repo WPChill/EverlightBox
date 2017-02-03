@@ -171,7 +171,7 @@ class Everlightbox {
 			echo "\n-->\n";			
 		}
 
-		if($plugin_public->options['facebook_comments'] == 'on')
+		if(isset($plugin_public->options['facebook_comments']) && $plugin_public->options['facebook_comments'] == 'on')
 		{
 			$this->loader->add_action( 'wp_ajax_fetch_comments_count', $plugin_public, 'fetch_comments_count' );
 		}
