@@ -47,6 +47,9 @@ There are many ways to contribute to EverlightBox.
 
 ## Changelog 
 
+### 1.0.25
+- [Fix] Fixed "Custom selector" option
+
 ### 1.0.24
 - [Fix] Supressed notice when disabling Facebook comments
 
