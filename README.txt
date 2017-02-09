@@ -112,7 +112,10 @@ Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 
 == Changelog ==
 
-= 1.0.24
+= 1.0.25 = 
+* [Fix] Fixed "Custom selector" option
+
+= 1.0.24 =
 * [Fix] Supressed notice when disabling Facebook comments
 
 = 1.0.23 =
@@ -194,6 +197,12 @@ Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 * First release!
 
 == Upgrade Notice ==
+
+= 1.0.25 =
+* [Fix] Fixed "Custom selector" option
+
+= 1.0.24 =
+* [Fix] Supressed notice when disabling Facebook comments
 
 = 1.0.23 =
 * [Add] Facebook custom App ID

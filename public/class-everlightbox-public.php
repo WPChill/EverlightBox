@@ -280,6 +280,22 @@ class Everlightbox_Public {
 			});
 			$all.addClass("everlightbox-trigger");
 			<?php endif ?>
+			<?php if($this->option_exists('custom_selector', false)) : ?>
+			var $all = $();
+			$("<?php echo $this->options['custom_selector'] ?>").not($linked).each(function() {
+				var href = $(this).attr("href");
+				if(href) {
+					href = href.toLowerCase();
+
+					if(endsWith(href, ".jpg") || endsWith(href, ".jpeg") ||
+					   endsWith(href, ".gif") || endsWith(href, ".png")) {
+						$all = $all.add($(this));
+					}
+				}
+			});
+			$all.addClass("everlightbox-trigger");
+			<?php endif ?>
+			
 			<?php
 				$sticky_buttons_css = $this->option_exists('sticky_buttons', false) ? "sticky-buttons" : "";
 				$sticky_caption_css = $this->option_exists('sticky_caption', false) ? "sticky-caption" : "";
