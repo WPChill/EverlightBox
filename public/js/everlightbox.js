@@ -4,15 +4,59 @@
  */
 !function(a){"use strict";var b=function(){function a(a,b,c,d){return"string"==typeof a&&"function"==typeof b&&(c=parseInt(c||10,10),h("actions",a,b,c,d)),k}function b(){var a=Array.prototype.slice.call(arguments),b=a.shift();return"string"==typeof b&&j("actions",b,a),k}function c(a,b){return"string"==typeof a&&g("actions",a,b),k}function d(a,b,c,d){return"string"==typeof a&&"function"==typeof b&&(c=parseInt(c||10,10),h("filters",a,b,c,d)),k}function e(){var a=Array.prototype.slice.call(arguments),b=a.shift();return"string"==typeof b?j("filters",b,a):k}function f(a,b){return"string"==typeof a&&g("filters",a,b),k}function g(a,b,c,d){if(l[a][b])if(c){var e,f=l[a][b];if(d)for(e=f.length;e--;){var g=f[e];g.callback===c&&g.context===d&&f.splice(e,1)}else for(e=f.length;e--;)f[e].callback===c&&f.splice(e,1)}else l[a][b]=[]}function h(a,b,c,d,e){var f={callback:c,priority:d,context:e},g=l[a][b];g?(g.push(f),g=i(g)):g=[f],l[a][b]=g}function i(a){for(var b,c,d,e=1,f=a.length;f>e;e++){for(b=a[e],c=e;(d=a[c-1])&&d.priority>b.priority;)a[c]=a[c-1],--c;a[c]=b}return a}function j(a,b,c){var d=l[a][b];if(!d)return"filters"===a?c[0]:!1;var e=0,f=d.length;if("filters"===a)for(;f>e;e++)c[0]=d[e].callback.apply(d[e].context,c);else for(;f>e;e++)d[e].callback.apply(d[e].context,c);return"filters"===a?c[0]:!0}var k={removeFilter:f,applyFilters:e,addFilter:d,removeAction:c,doAction:b,addAction:a},l={actions:{},filters:{}};return k};a.wp=a.wp||{},a.wp.hooks=new b}(window);
 
-;( function ( window, document, $, undefined ) {
+var everlightboxQualifyURL = function (url) {
+    var img = document.createElement('img');
+    img.src = url; // set string url
+    url = img.src; // get qualified url
+    img.src = null; // no server request
+    return url;
+};
 
-    var qualifyURL = function (url) {
-        var img = document.createElement('img');
-        img.src = url; // set string url
-        url = img.src; // get qualified url
-        img.src = null; // no server request
-        return url;
-    };
+function evshare(e) {
+	var $ = jQuery;
+    var slide = $( '#everlightbox-slider .slide.current' );
+    var text = document.title;
+    if(slide.find(".everlightbox-caption").length) 
+        text = slide.find(".everlightbox-caption").text();
+
+    var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
+	
+	var social = $(e).data("social");
+	
+	var url = "";
+	
+	if(social == "pinterest") {
+		url = "http://pinterest.com/pin/create/button/?url=" + encodeURIComponent(location.href) + "&description=" + encodeURI(text);
+		url += ("&media=" + encodeURIComponent(everlightboxQualifyURL(image)));
+	}
+	if(social == "twitter") {
+		url = "https://twitter.com/intent/tweet?url=" + encodeURI(location.href.split('#')[0]) + "&text=" + encodeURI(text)
+	}
+	if(social == "gplus") {
+		url = "https://plus.google.com/share?url=" + encodeURI(location.href);
+	}
+	if(social == "houzz") {
+		url = "http://www.houzz.com/imageClipperUpload?imageUrl=" + encodeURIComponent(everlightboxQualifyURL(image)) +
+                    "&link=" + encodeURI(location.href) + "&title=" + encodeURI(text);
+	}
+    if(social == "facebook") {
+	    url = "https://www.facebook.com/dialog/feed?app_id="+__everlightbox_conf.facebookAppId+"&"+
+	        "link="+encodeURIComponent(location.href)+"&" +
+	        "display=popup&"+
+	        "name="+encodeURIComponent(document.title)+"&"+
+	        "caption=&"+
+	        "description="+encodeURIComponent(text)+"&"+
+	        "picture="+encodeURIComponent(everlightboxQualifyURL(image))+"&"+
+	        "ref=share&"+
+	        "actions={%22name%22:%22View%20the%20gallery%22,%20%22link%22:%22"+encodeURIComponent(location.href)+"%22}&"+
+	        "redirect_uri=http://everlightbox.io/facebook_redirect.html";
+    }
+		
+    var w = window.open(url, "ftgw", "location=1,status=1,scrollbars=1,width=600,height=400");
+    w.moveTo((screen.width / 2) - (300), (screen.height / 2) - (200));
+}
+
+;( function ( window, document, $, undefined ) {    
     
     $.everlightbox = function( elem, options ) {
 
@@ -285,84 +329,7 @@
             },
 
             setupSocial: function () {
-                var $this = this;
-
-                $('body').on('touchstart click', '.everlightbox-pinterest', function (e) {
-                    e.preventDefault();
-                    var text = $this.getCurrentTitle();
-                    var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
-
-                    var url = "http://pinterest.com/pin/create/button/?url=" + encodeURIComponent(location.href) + "&description=" + encodeURI(text);
-
-                    url += ("&media=" + encodeURIComponent(qualifyURL(image)));
-
-                    var w = window.open(url, "ftgw", "location=1,status=1,scrollbars=1,width=600,height=400");
-                    w.moveTo((screen.width / 2) - (300), (screen.height / 2) - (200));
-                });
-
-                $('body').on('touchstart click', '.everlightbox-twitter', function (e) {
-                    e.preventDefault();
-                    var text = $this.getCurrentTitle();
-                    var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
-
-                    var w = window.open("https://twitter.com/intent/tweet?url=" + encodeURI(location.href.split('#')[0]) + "&text=" + encodeURI(text), "ftgw", "location=1,status=1,scrollbars=1,width=600,height=400");
-                    w.moveTo((screen.width / 2) - (300), (screen.height / 2) - (200));
-                });
-
-                $('body').on('touchstart click', '.everlightbox-googleplus', function (e) {
-                    e.preventDefault();
-                    var text = $this.getCurrentTitle();
-                    var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
-
-                    var url = "https://plus.google.com/share?url=" + encodeURI(location.href);
-
-                    var w = window.open(url, "ftgw", "location=1,status=1,scrollbars=1,width=600,height=400");
-                    w.moveTo((screen.width / 2) - (300), (screen.height / 2) - (200));
-                });
-
-                $('body').on('touchstart click', '.everlightbox-houzz', function (e) {
-                    e.preventDefault();
-                    var text = $this.getCurrentTitle();
-                    var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
-
-                    var url = "http://www.houzz.com/imageClipperUpload?imageUrl=" + encodeURIComponent(qualifyURL(image)) +
-                                    "&link=" + encodeURI(location.href) + "&title=" + encodeURI(text);
-
-                    var w = window.open(url, "ftgw", "location=1,status=1,scrollbars=1,width=600,height=400");
-                    w.moveTo((screen.width / 2) - (300), (screen.height / 2) - (200));
-                });
-
-                $('body').on('touchstart click', '.everlightbox-facebook', function (e) {
-                    e.preventDefault();
-                    var text = $this.getCurrentTitle();
-                    var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
-
-                    var url = "https://www.facebook.com/dialog/feed?app_id="+plugin.settings.facebookAppId+"&"+
-                        "link="+encodeURIComponent(location.href)+"&" +
-                        "display=popup&"+
-                        "name="+encodeURIComponent(document.title)+"&"+
-                        "caption=&"+
-                        "description="+encodeURIComponent(text)+"&"+
-                        "picture="+encodeURIComponent(qualifyURL(image))+"&"+
-                        "ref=share&"+
-                        "actions={%22name%22:%22View%20the%20gallery%22,%20%22link%22:%22"+encodeURIComponent(location.href)+"%22}&"+
-                        "redirect_uri=http://everlightbox.io/facebook_redirect.html";
-
-                    var w = window.open(url, "ftgw", "location=1,status=1,scrollbars=1,width=600,height=400");
-                    w.moveTo((screen.width / 2) - (300), (screen.height / 2) - (200));
-                });
-
-                $('body').on('touchstart click', '.everlightbox-tumblr', function (e) {
-                    e.preventDefault();
-                    var text = $this.getCurrentTitle();
-                    var image = $( '#everlightbox-slider .slide.current img' ).attr("src");
-
-                    var url = "http://www.tumblr.com/share/link?url=" + encodeURIComponent(qualifyURL(image)) +
-                        "&name=" + encodeURI(text);
-
-                    var w = window.open(url, "ftgw", "location=1,status=1,scrollbars=1,width=600,height=400");
-                    w.moveTo((screen.width / 2) - (300), (screen.height / 2) - (200));
-                });
+                
             },
 
             /**
@@ -822,17 +789,17 @@
 
                         var social = [];
                         if(plugin.settings.facebookIcon)
-                            social.push('<a title="Share on Facebook" class="everlightbox-button everlightbox-facebook"><i class="ev-icon-facebook"></i></a>');
+                            social.push('<a onclick="evshare(this)" data-social="facebook" title="Share on Facebook" class="everlightbox-button everlightbox-facebook"><i class="ev-icon-facebook"></i></a>');
                         if(plugin.settings.pinterestIcon)
-                            social.push('<a title="Share on Pinterest" class="everlightbox-button everlightbox-pinterest"><i class="ev-icon-pinterest"></i></a>');
+                            social.push('<a onclick="evshare(this)" data-social="pinterest" title="Share on Pinterest" class="everlightbox-button everlightbox-pinterest"><i class="ev-icon-pinterest"></i></a>');
                         if(plugin.settings.tumblrIcon)
-                            social.push('<a title="Share on Tumblr" class="everlightbox-button everlightbox-tumblr"><i class="ev-icon-tumblr"></i></a>');
+                            social.push('<a onclick="evshare(this)" data-social="tumblr" title="Share on Tumblr" class="everlightbox-button everlightbox-tumblr"><i class="ev-icon-tumblr"></i></a>');
                         if(plugin.settings.twitterIcon)
-                            social.push('<a title="Share on Twitter" class="everlightbox-button everlightbox-twitter"><i class="ev-icon-twitter"></i></a>');
+                            social.push('<a onclick="evshare(this)" data-social="twitter" title="Share on Twitter" class="everlightbox-button everlightbox-twitter"><i class="ev-icon-twitter"></i></a>');
                         if(plugin.settings.houzzIcon)
-                            social.push('<a share="Share on Houzz" class="everlightbox-button everlightbox-houzz"><i class="ev-icon-houzz"></i></a>');
+                            social.push('<a onclick="evshare(this)" data-social="houzz" share="Share on Houzz" class="everlightbox-button everlightbox-houzz"><i class="ev-icon-houzz"></i></a>');
                         if(plugin.settings.googleplusIcon)
-                            social.push('<a title="Share on Google+" class="everlightbox-button everlightbox-googleplus"><i class="ev-icon-gplus"></i></a>');
+                            social.push('<a onclick="evshare(this)" data-social="gplus" title="Share on Google+" class="everlightbox-button everlightbox-googleplus"><i class="ev-icon-gplus"></i></a>');
                         if(plugin.settings.downloadIcon)
                             social.push('<a title="Download image" href="'+ this.attr("src") +'" download class="everlightbox-button everlightbox-download"><i class="ev-icon-install"></i></a>');
                         if(plugin.settings.facebookLike)
