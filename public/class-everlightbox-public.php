@@ -144,8 +144,8 @@ class Everlightbox_Public {
             #everlightbox-slider .slide img,
             #everlightbox-slider .slide .everlightbox-video-container,
             #everlightbox-slider .slide .everlightbox-inline-container {
-                max-width: calc(<?php echo $this->options['max_width'] ?>% - 75px);
-                max-height: calc(<?php echo $this->options['max_height'] ?>% - 75px);
+                max-width: calc(<?php echo $this->options['max_width'] ?>% - 15px);
+                max-height: calc(<?php echo $this->options['max_height'] ?>% - 15px);
             }
 
             <?php 
@@ -248,6 +248,10 @@ class Everlightbox_Public {
 				$(this).parents(".gallery-item").find("a").attr("title", title);
 			});
 			$('.tiled-gallery figcaption').each(function () {
+				var title = $.trim($(this).text());
+				$(this).parents(".tiled-gallery-item").find("a").attr("title", title);
+			});
+			$('.tiled-gallery .tiled-gallery-caption').each(function () {
 				var title = $.trim($(this).text());
 				$(this).parents(".tiled-gallery-item").find("a").attr("title", title);
 			});

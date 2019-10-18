@@ -114,3 +114,8 @@ h1 {
 		margin:10px auto;
 	}
 }
+
+.wpbar-everlightbox {
+	position: relative;
+    top: 5px;
+}

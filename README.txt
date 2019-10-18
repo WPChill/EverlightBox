@@ -1,18 +1,16 @@
 === Lightbox - EverlightBox Gallery ===
-Contributors: GreenTreeLabs
-Donate link: http://amzn.eu/5SP6qpj 
+Contributors: machothemes,silkalns
 Tags: lightbox, gallery, social, social sharing, images, image gallery, lightbox image, video gallery, video lightbox, video
-Requires at least: 3.0.1
-Tested up to: 4.7.2
-Stable tag: trunk
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires at least: 4.9
+Tested up to: 5.2
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Lightbox gallery with social features: share images and add facebook comments. It works smoothly on all mobile devices. Fast and safe. It supports video too.
 
 == Description ==
 
-EverlightBox has a very **social attitude**: users can share the image they're *currently* seeing and they can even write comments thanks to the Facebook comments widget.
+EverlightBox has a very **social attitude**: users can comment the image they're *currently* seeing.
 
 https://www.youtube.com/watch?v=izBH_4ZV4og
 
@@ -20,18 +18,13 @@ EverlightBox is a very **fast** and **safe** lightbox for WordPress. It can be u
 
 * WordPress native galleries
 * [Final Tiles Gallery](https://wordpress.org/plugins/final-tiles-grid-gallery-lite/)
-* [Modula Grid Gallery](https://wordpress.org/plugins/modula-best-grid-gallery/)
+* [PhotoBlocks Grid Gallery](https://wordpress.org/plugins/photoblocks-grid-gallery/)
  
 and any linked image. You can even activate it using custom CSS selectors, so it's virtually compatible with every gallery plugin.
 
 EverlightBox is also a perfect solution for **mobile** devices, it supports swipe gestures so users are able to browse your images in a more natural way.
 
-All users are welcome to propose new features, enhancements and bug fixes. You can fork the project from [EverlightBox Github](https://github.com/GreenTreeLabs/EverlightBox) repository.
-I wait for your pull requests!
-
-[EverlightBox website](http://everlightbox.io)
-
-If you really like this plugin and you don't know how to say "thanks!" then you may consider making a gift from my [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
+All users are welcome to propose new features, enhancements and bug fixes. 
 
 == Installation ==
 
@@ -90,16 +83,6 @@ You'll need to disable the default lightbox. Go to your gallery settings, click 
 
 Just install EverlightBox and don't activate a FooGallery lightbox.
 
-
-= May I contribute? =
-
-Yes! Fork the project from [EverlightBox Github](https://github.com/GreenTreeLabs/EverlightBox) repository.
-If you're not familiar with Git you may write on the [Gitter channel](https://gitter.im/EverlightBox/Features).
-
-= I love this plugin! Can I send a donation? =
-
-Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
-
 == Screenshots ==
 
 1. Mobile view with social networks enabled
@@ -111,6 +94,40 @@ Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 7. "White splash" theme
 
 == Changelog ==
+
+= 1.1.9 =
+[Fix] Fixed Pinterest and Facebook social sharing
+
+= 1.1.8 =
+[Fix] Fixed social sharing
+
+= 1.1.7 =
+[Fix] Fixed social sharing
+[Enhancement] Improved UI on mobile devices
+
+= 1.1.6 =
+[Enhancement] Compatibility with last version of JetPack's tiles galleries
+
+= 1.1.5 =
+[Enhancement] Compatibility with last version of JetPack's tiles galleries
+
+= 1.1.4 =
+[Fix] Fixed issues with PHP 7.2
+
+= 1.1.3.2 =
+Minor fixes
+
+= 1.1.3.1 =
+(Flushing publishment on wp.org)
+
+= 1.1.3 = 
+* [Enhancement] Welcome page
+
+= 1.1.2 = 
+* [Fix] Bug fix
+
+= 1.1.1 = 
+* Added Freemius
 
 = 1.0.25 = 
 * [Fix] Fixed "Custom selector" option
@@ -197,6 +214,18 @@ Well... by accident, I have a [wish list](http://amzn.eu/5SP6qpj) on Amazon :)
 * First release!
 
 == Upgrade Notice ==
+
+= 1.1.9 =
+[Fix] Fixed Pinterest and Facebook social sharing
+
+= 1.1.6 =
+[Enhancement] Compatibility with last version of JetPack's tiles galleries
+
+= 1.1.5 =
+[Enhancement] Compatibility with last version of JetPack's tiles galleries
+
+= 1.1.4 =
+[Fix] Fixed issues with PHP 7.2
 
 = 1.0.25 =
 * [Fix] Fixed "Custom selector" option

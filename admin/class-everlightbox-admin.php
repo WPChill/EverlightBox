@@ -128,9 +128,27 @@ class Everlightbox_Admin {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/everlightbox-admin.js', array( 'jquery' ), $this->version, false );
+	}
 
+	/**
+	 * Welcome page redirect.
+	 *
+	 * @since 1.1.3
+	 */
+	function welcome() {
+		if (get_option('everlightbox_welcome' ) ) {	
+			return;
+		}
+	
+		update_option('everlightbox_welcome', true);
+		
+		if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {	
+			return;
+		}
+		
+		wp_safe_redirect( add_query_arg( array( 'page' => 'everlightbox_welcome_page' ), admin_url( 'admin.php' ) ) );
+	
 	}
 
 	/**
@@ -139,8 +157,34 @@ class Everlightbox_Admin {
 	 * @since    1.0.0
 	 */
 	public function init() {
+		global $evebox_fs;
+
 		register_setting( $this->option_key, $this->option_key );
-		$this->check_default_values();
+		$this->check_default_values();		
+
+		if($evebox_fs->is_free_plan()) {
+			add_action( 'admin_bar_menu', function( $bar ) {
+				$bar->add_menu( array(
+					'id'     => 'wpse',
+					'parent' => null,
+					'group'  => null,
+					'title'  => "<img title='Upgrade EverlightBox' class='wpbar-everlightbox' src='". plugin_dir_url( __FILE__ ) . "/icon-alert.png'>",
+					'href'   => "admin.php?page=everlightbox_welcome_page"
+				) );
+			}, 100 );
+		}			
+	}
+
+
+	/**
+	 * Welcome page
+	 *
+	 * @since    1.1.3
+	 */
+	public function welcome_page()
+	{
+		global $evebox_fs; 
+		include "partials/welcome.php";
 	}
 
 	/**
@@ -151,6 +195,16 @@ class Everlightbox_Admin {
 	public function menu() {
 
 		$this->options_page = add_menu_page('Settings', 'EverlightBox', 'manage_options', $this->option_key, array($this, 'page_settings'), plugin_dir_url( __FILE__ ) . '/icon.png');
+		
+		add_submenu_page(
+			$this->option_key, // The slug name for the parent menu (or the file name of a standard WordPress admin page).
+			__( 'Welcome Page', 'everlightbox' ), // The text to be displayed in the title tags of the page when the menu is selected.
+			__( 'Welcome Page', 'everlightbox' ), // The text to be used for the menu.
+			'manage_options', // The capability required for this menu to be displayed to the user.
+			'everlightbox_welcome_page', // The slug name to refer to this menu by (should be unique for this menu).
+			array($this, "welcome_page") // The function to be called to output the content for this page.
+		);
+
 		do_action('everlightbox_menu');
 	}
 
@@ -161,14 +215,14 @@ class Everlightbox_Admin {
 	 */
 	public function page_settings()
 	{
+		global $evebox_fs;
 		$tabs = new EverlightBox_AdminTab();
 		$tabs->add("1", "Aspect");
 		$tabs->add("2", "Features");
 		$tabs->add("3", "Social");
 
 		apply_filters('everlightbox_additional_tabs', $tabs);
-
-		$tabs->add("addons", "Add-ons");
+		
 		$tabs->add("galleries", "Galleries");		
 
 		include "partials/everlightbox-admin-display.php";
@@ -229,7 +283,7 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Anchor buttons to edges',
+			'name' => __('Anchor buttons to edges','everlightbox'),
 			'desc' => '',
 			'id'   => 'buttons_edges',
 			'type' => 'checkbox',
@@ -253,23 +307,23 @@ class Everlightbox_Admin {
 		) );
 		
 		$cmb_options->add_field( array(
-			'name' => 'Sticky buttons',
-			'desc' => 'Keep buttons (sharing, close, download) always visible',
+			'name' => __('Sticky buttons','everlightbox'),
+			'desc' => __('Keep buttons (sharing, close, download) always visible','everlightbox'),
 			'id'   => 'sticky_buttons',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-1'
 		) );
 		
 		$cmb_options->add_field( array(
-			'name' => 'Sticky caption',
-			'desc' => 'Keep caption always visible',
+			'name' => __('Sticky caption','everlightbox'),
+			'desc' => __('Keep caption always visible','everlightbox'),
 			'id'   => 'sticky_caption',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-1'
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Round corners',
+			'name' => __('Round corners','everlightbox'),
 			'desc' => '',
 			'id'   => 'round_corners',
 			'type' => 'checkbox',
@@ -277,25 +331,25 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Disable buttons background',
-			'desc' => 'Disable the background behind buttons',
+			'name' => __('Disable buttons background','everlightbox'),
+			'desc' => __('Disable the background behind buttons','everlightbox'),
 			'id'   => 'disable_buttons_background',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-1'
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Icon size',
-			'desc' => 'Size in pixel of the icons inside the buttons',
+			'name' => __('Icon size','everlightbox'),
+			'desc' => __('Size in pixel of the icons inside the buttons','everlightbox'),
 			'id'   => 'icons_size',
 			'type' => 'text_small',
-			'default' => '15',
+			'default' => '24',
 			'row_classes' => 'el-tab-1'
 		) );
 
 		$cmb_options->add_field( array(
-			'name'    => 'Sharing',
-			'desc'    => 'Choose on which social networks users can share the photos',
+			'name'    => __('Sharing','everlightbox'),
+			'desc'    => __('Choose on which social networks users can share the photos','everlightbox'),
 			'id'      => 'social',
 			'type'    => 'multicheck',
 			'select_all_button' => false,
@@ -311,8 +365,8 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Don\'t include Facebook scripts',
-			'desc' => 'Check this box if your theme, or other plugins, already include Facebook scripts',
+			'name' => __('Don\'t include Facebook scripts','everlightbox'),
+			'desc' => __('Check this box if your theme, or other plugins, already include Facebook scripts','everlightbox'),
 			'id'   => 'no_facebook_scripts',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-3'
@@ -327,63 +381,63 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Enable Facebook comments',
-			'desc' => 'Let users comments your photos',
+			'name' => __('Enable Facebook comments','everlightbox'),
+			'desc' => __('Let users comments your photos','everlightbox'),
 			'id'   => 'facebook_comments',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-3'
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Show Facebook comment count',
-			'desc' => 'Show comment count for each image',
+			'name' => __('Show Facebook comment count','everlightbox'),
+			'desc' => __('Show comment count for each image','everlightbox'),
 			'id'   => 'facebook_comment_count',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-3'
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Enable Facebook like button',
-			'desc' => 'Let users like your photos',
+			'name' => __('Enable Facebook like button','everlightbox'),
+			'desc' => __('Let users like your photos','everlightbox'),
 			'id'   => 'facebook_like',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-3'
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Download button',
-			'desc' => 'Let users download the photo',
+			'name' => __('Download button','everlightbox'),
+			'desc' => __('Let users download the photo','everlightbox'),
 			'id'   => 'download',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-2'
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Close with background click',
-			'desc' => 'Close lightbox by clicking the background',
+			'name' => __('Close with background click','everlightbox'),
+			'desc' => __('Close lightbox by clicking the background','everlightbox'),
 			'id'   => 'close_bg',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-2'
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Show fullscreen icon',
-			'desc' => 'Let users maximize the browser window',
+			'name' => __('Show fullscreen icon','everlightbox'),
+			'desc' => __('Let users maximize the browser window','everlightbox'),
 			'id'   => 'fullscreen_icon',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-2'
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'Loop at end',
-			'desc' => 'Go back to the first image after the last one',
+			'name' => __('Loop at end','everlightbox'),
+			'desc' => __('Go back to the first image after the last one','everlightbox'),
 			'id'   => 'loop',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-2'
 		) );		
 
 		$cmb_options->add_field( array(
-			'name' => 'Disable keyboard navigation',
+			'name' => __('Disable keyboard navigation','everlightbox'),
 			'desc' => '',
 			'id'   => 'disable_keyb_nav',
 			'type' => 'checkbox',
@@ -391,40 +445,40 @@ class Everlightbox_Admin {
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'WordPress native linked images with captions',
-			'desc' => '"Native linked images" are the images<br>you add through the WP Media Panel.<br>EverlightBox can recognize them only if<br>they have a caption, otherwise check the "All images" option',
+			'name' => __('WordPress native linked images with captions','everlightbox'),
+			'desc' => __('"Native linked images" are the images<br>you add through the WP Media Panel.<br>EverlightBox can recognize them only if<br>they have a caption, otherwise check the "All images" option','everlightbox'),
 			'id'   => 'wp_images',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-2'
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'WordPress native galleries',
-			'desc' => 'Enable the lightbox on all native galleries',
+			'name' => __('WordPress native galleries','everlightbox'),
+			'desc' => __('Enable the lightbox on all native galleries','everlightbox'),
 			'id'   => 'wp_galleries',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-2'
 		) );		
 
 		$cmb_options->add_field( array(
-			'name' => 'Custom CSS selector',
-			'desc' => 'Activate EverlightBox on images using your own CSS selector',
+			'name' => __('Custom CSS selector','everlightbox'),
+			'desc' => __('Activate EverlightBox on images using your own CSS selector','everlightbox'),
 			'id'   => 'custom_selector',
 			'type' => 'text',
 			'row_classes' => 'el-tab-2'
 		) );
 
 		$cmb_options->add_field( array(
-			'name' => 'All linked images',
-			'desc' => 'Activate EverlightBox on all linked images',
+			'name' => __('All linked images','everlightbox'),
+			'desc' => __('Activate EverlightBox on all linked images','everlightbox'),
 			'id'   => 'all_links',
 			'type' => 'checkbox',
 			'row_classes' => 'el-tab-2'
 		) );
 
 		$cmb_options->add_field( array(
-			 'name' => 'Custom CSS',
-			 'desc' => 'Customize the looking of the lightbox with your own CSS',
+			 'name' => __('Custom CSS','everlightbox'),
+			 'desc' => __('Customize the looking of the lightbox with your own CSS','everlightbox'),
 			 'id'   => 'custom_css',
 			 'type' => 'textarea',
 			 'row_classes' => 'el-tab-2'
@@ -451,13 +505,12 @@ class Everlightbox_Admin {
 	public function register_links($links, $file) {
 
 		$base = "everlightbox/everlightbox.php";
-		if ($file == $base) {
-			$links[] = '<a href="admin.php?page=ftg-gallery-admin" title="Final Tiles Grid Gallery Dashboard">Dashboard</a>';
-			$links[] = '<a href="admin.php?page=support" title="Final Tiles Grid Gallery Support">Support</a>';
-			$links[] = '<a href="https://twitter.com/greentreelabs" title="@GreenTreeLabs on Twitter">Twitter</a>';
-			$links[] = '<a href="https://www.facebook.com/greentreelabs" title="GreenTreeLabs on Facebook">Facebook</a>';
-			$links[] = '<a href="https://www.google.com/+GreentreelabsNetjs" title="GreenTreeLabs on Google+">Google+</a>';
-		}
+        if ( $file == $base ) {
+            $links[] = '<a href="admin.php?page=ftg-lite-gallery-admin" title="Final Tiles Grid Gallery Dashboard">Dashboard</a>';
+            $links[] = '<a href="https://www.machothemes.com/" title="MachoThemes website">MachoThemes</a>';
+            $links[] = '<a href="https://twitter.com/machothemes" title="@MachoThemes on Twitter">Twitter</a>';
+            $links[] = '<a href="https://www.facebook.com/machothemes" title="MachoThemes on Facebook">Facebook</a>';
+        }
 		return $links;
 	}
 
