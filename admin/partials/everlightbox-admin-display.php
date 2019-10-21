@@ -65,6 +65,6 @@
 <p class="el-footer">
 	<a href="https://wordpress.org/support/plugin/everlightbox/reviews/">Rate ⭐⭐⭐⭐⭐ if you liked this plugin, thanks!</a><br>
 	<br>
-	EverlightBox is a proudly developed by Diego Imbriani AKA <a href="https://www.greentreelabs.net">GreenTreeLabs</a>.<br>
+	EverlightBox is a proudly developed by <a href="https://www.machothemes.com/">MachoThemes</a>.<br>
 	Please report bugs and suggestions.	
 </p>

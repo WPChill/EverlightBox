@@ -1,0 +1,8 @@
+*.log
+/node_modules/
+.idea/
+/.standard.json
+everlightbox.zip
+package-lock.json
+.DS_Store
+package-lock.json
