@@ -3,7 +3,7 @@ Contributors: machothemes,silkalns
 Tags: lightbox, gallery, social, social sharing, images, image gallery, lightbox image, video gallery, video lightbox, video
 Requires at least: 4.9
 Tested up to: 5.2
-Stable tag: 1.1.11
+Stable tag: 1.1.12
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -95,6 +95,10 @@ Just install EverlightBox and don't activate a FooGallery lightbox.
 7. "White splash" theme
 
 == Changelog ==
+
+= 1.1.12 =
+[Enhancement] Extend gutenberg gallery block so galleries can be groupped
+[Enhancement] Extend everlightbox gallery grouping functionality
 
 = 1.1.9 =
 [Fix] Fixed Pinterest and Facebook social sharing

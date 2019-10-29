@@ -2,7 +2,7 @@
 /**
 * Plugin Name:              EverlightBox
 * Description:              Light and stylish lightbox for WordPress
-* Version:                  1.1.11
+* Version:                  1.1.12
 * Author:                   MachoThemes
 * Author URI:               https://www.machothemes.com
 * Requires:                 4.9 or higher
@@ -28,7 +28,7 @@
 if ( !defined( 'WPINC' ) ) {
     die;
 }
-define( "EVERLIGHTBOX_VERSION", "1.1.11" );
+define( "EVERLIGHTBOX_VERSION", "1.1.12" );
 define( "EVERLIGHTBOX_URL", plugin_dir_url( __FILE__ ) );
 
 if ( !function_exists( "evebox_fs" ) ) {
