@@ -227,8 +227,17 @@ class Everlightbox_Public {
 			<?php if($this->option_exists('wp_galleries', false) ||
 					 $this->option_exists('all_links', false)) : ?>
 
-			$linked.add($(".gallery .gallery-item a").addClass("everlightbox-trigger"));
-			$linked.add($(".tiled-gallery .tiled-gallery-item a").addClass("everlightbox-trigger"));
+
+            if($(".gallery .gallery-item a").parents('*[everlightbox_rel="true"]').length > 0 || $(".tiled-gallery .tiled-gallery-item a").parents('*[everlightbox_rel="true"]').length > 0 ){
+
+                $linked.add($(".gallery .gallery-item a").addClass("everlightbox-trigger").attr('rel',$(".gallery .gallery-item a").parents('*[everlightbox_rel="true"]').attr('rel')));
+                $linked.add($(".tiled-gallery .tiled-gallery-item a").addClass("everlightbox-trigger").attr('rel',$(".gallery .gallery-item a").parents('*[everlightbox_rel="true"]').attr('rel')));
+            } else {
+
+                $linked.add($(".gallery .gallery-item a").addClass("everlightbox-trigger"));
+                $linked.add($(".tiled-gallery .tiled-gallery-item a").addClass("everlightbox-trigger"));
+            }
+
 
 			$('.gallery').each(function (galleryIndex) {
 				$('.gallery-item a', this).each(function (i, o) {
@@ -278,10 +287,14 @@ class Everlightbox_Public {
 
 					if(endsWith(href, ".jpg") || endsWith(href, ".jpeg") ||
 					   endsWith(href, ".gif") || endsWith(href, ".png")) {
+					    if(($(this).parents('*[everlightbox_rel="true"]').length > 0)){
+                            $(this).attr('rel',$(this).parents('*[everlightbox_rel="true"]').attr('rel'));
+                        }
 						$all = $all.add($(this));
 					}
 				}
 			});
+
 			$all.addClass("everlightbox-trigger");
 			<?php endif ?>
 			<?php if($this->option_exists('custom_selector', false)) : ?>

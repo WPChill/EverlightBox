@@ -131,6 +131,20 @@ class Everlightbox_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/everlightbox-admin.js', array( 'jquery' ), $this->version, false );
 	}
 
+    /**
+     * Enqueue Gallery block extension script
+     * @since 1.1.12
+     */
+	public function everlightbox_extend_gallery_block(){
+        wp_enqueue_script(
+            'everlightbox-extend-gallery-block',
+           EVERLIGHTBOX_URL.'public/js/everlightbox-gallery-block-extension.js' ,
+            array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
+            '1.0.0',
+            true // Enqueue the script in the footer.
+        );
+    }
+
 	/**
 	 * Welcome page redirect.
 	 *
