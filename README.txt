@@ -2,7 +2,7 @@
 Contributors: machothemes,silkalns
 Tags: lightbox, gallery, social, social sharing, images, image gallery, lightbox image, video gallery, video lightbox, video
 Requires at least: 4.9
-Tested up to: 5.2
+Tested up to: 5.3
 Stable tag: 1.1.12
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
