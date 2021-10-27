@@ -74,7 +74,7 @@
 } ?>>
     <td>
         <!-- Title -->
-        <?php echo $addon->title ?>
+        <?php echo sanitize_textfield( $addon->title ); ?>
     </td>
     <?php if ( $is_addon_connected ) : ?>
         <!-- ID -->

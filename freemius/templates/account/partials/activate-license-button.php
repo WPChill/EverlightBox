@@ -32,13 +32,13 @@
 
     $action = 'activate_license';
 ?>
-<form action="<?php echo $fs->_get_admin_page_url( 'account' ) ?>" method="POST">
-    <input type="hidden" name="fs_action" value="<?php echo $action ?>">
+<form action="<?php echo esc_url( $fs->_get_admin_page_url( 'account' ) ); ?>" method="POST">
+    <input type="hidden" name="fs_action" value="<?php echo esc_attr( $action ); ?>">
     <?php wp_nonce_field( trim("{$action}:{$blog_id}:{$install_id}", ':') ) ?>
-    <input type="hidden" name="install_id" value="<?php echo $install_id ?>">
-    <input type="hidden" name="blog_id" value="<?php echo $blog_id ?>">
-    <input type="hidden" name="license_id" value="<?php echo $available_license->id ?>">
-    <input type="submit" class="fs-activate-license button<?php echo ! empty( $VARS['class'] ) ? ' ' . $VARS['class'] : '' ?>"
+    <input type="hidden" name="install_id" value="<?php echo esc_attr( $install_id ); ?>">
+    <input type="hidden" name="blog_id" value="<?php echo esc_attr( $blog_id ); ?>">
+    <input type="hidden" name="license_id" value="<?php echo esc_attr( $available_license->id ); ?>">
+    <input type="submit" class="fs-activate-license button<?php echo ! empty( $VARS['class'] ) ? ' ' . esc_attr( $VARS['class'] ) : '' ?>"
            value="<?php echo esc_attr( sprintf(
                $activate_plan_text . '%s',
                $premium_plan->title,

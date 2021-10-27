@@ -175,7 +175,7 @@
          *
          */
         function dismiss_notice_ajax_callback() {
-            $this->_sticky_storage->remove( $_POST['message_id'] );
+            $this->_sticky_storage->remove( esc_attr( $_POST['message_id'] ) );
             wp_die();
         }
 

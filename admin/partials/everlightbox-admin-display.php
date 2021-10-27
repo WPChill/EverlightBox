@@ -32,7 +32,7 @@
 	<div id="greentreelabs-plugins" style="display:none" class="el-tab-galleries el-to-hide everlightbox-plugins">
 		<p>Suggested galleries:</p>
 		<div class="gtl-item">
-			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/final-tiles.jpg">
+			<img src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>../images/final-tiles.jpg">
 			<div class="text">
 				<h3>Final Tiles Gallery</h3>
 				<p>Gallery plugin with 2 available layouts: <strong>Final Tiles</strong> 
@@ -42,7 +42,7 @@
 			</div>
 		</div>	
 		<div class="gtl-item">
-			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/photoblocks.jpg">
+			<img src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>../images/photoblocks.jpg">
 			<div class="text">
 				<h3>PhotoBlocks Gallery</h3>
 				<p>Build your gallery with a super easy <strong>drag and drop</strong> tool.</p>
@@ -50,7 +50,7 @@
 			</div>
 		</div>	
 		<div class="gtl-item">
-			<img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/circles.jpg">
+			<img src="<?php  echo esc_url(plugin_dir_url( __FILE__ ) ); ?>../images/circles.jpg">
 			<div class="text">
 				<h3>Circles Gallery</h3>
 				<p>Three plugins in one: not only an original gallery plugin for WordPress but also a 

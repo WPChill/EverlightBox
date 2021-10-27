@@ -128,7 +128,7 @@
     </div>    
 
     <div class="eb-content">
-        <h1><?php _e("Welcome to EverlightBox", "everlightbox") ?></h1>
+        <h1><?php esc_html_e("Welcome to EverlightBox", "everlightbox") ?></h1>
 
         <div class="eb-card">
             <h2>Lightbox with social attitude</h2>
@@ -140,9 +140,9 @@
                 <li><a href="https://wordpress.org/plugins/final-tiles-grid-gallery-lite/" target="_blank">Final Tiles Gallery</a></li>
                 <li><a href="https://wordpress.org/plugins/photoblocks-grid-gallery/" target="_blank">PhotoBlocks Grid Gallery</a></li>
             </ul>
-            <?php if($evebox_fs->is_free_plan()) : ?>
+            <?php if( $evebox_fs->is_free_plan() ) : ?>
             <p class="eb-center eb-mt-40">
-                <a href="<?php echo $evebox_fs->get_upgrade_url() ?>" class="eb-button">Go Premium</a>
+                <a href="<?php echo esc_url( $evebox_fs->get_upgrade_url() ); ?>" class="eb-button">Go Premium</a>
             </p>
             <?php endif ?>
             <p class="eb-center">and get: Facebook comments sidebar, background graphics, new icon sets, 3 new themes.</p>
@@ -153,10 +153,10 @@
             <p>A unique feature of EverlightBox is Facebook comments. Letting users commenting each photo is an effective
                 way to engage your audience and get more users.
             </p>
-            <img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/mac.png">
-            <?php if($evebox_fs->is_free_plan()) : ?>
+            <img src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>../images/mac.png">
+            <?php if( $evebox_fs->is_free_plan() ) : ?>
             <p class="eb-center eb-mt-20 eb-mb-0">
-                <a href="<?php echo $evebox_fs->get_upgrade_url() ?>" class="eb-button">Get Facebook sidebar</a>
+                <a href="<?php echo esc_url( $evebox_fs->get_upgrade_url() ); ?>" class="eb-button">Get Facebook sidebar</a>
             </p>
             <?php endif ?>
         </div>
@@ -164,16 +164,16 @@
         <div class="eb-card">
             <h2>Mobile ready</h2>
             <p>EverlightBox supports swipe gestures in order to keep the natural feeling and the expected user experience.</p>
-            <img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/mobile.png">
+            <img src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>../images/mobile.png">
         </div>
 
         <div class="eb-card">
             <h2>3 new themes</h2>
             <p>Purchasing a premium license you'll get 3 new additional themes for your website</p>
-            <img src="<?php echo plugin_dir_url( __FILE__ ) ?>../images/theme.jpg">
-            <?php if($evebox_fs->is_free_plan()) : ?>
+            <img src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>../images/theme.jpg">
+            <?php if( $evebox_fs->is_free_plan() ) : ?>
             <p class="eb-center eb-mt-20 eb-mb-0">
-                <a href="<?php echo $evebox_fs->get_upgrade_url() ?>" class="eb-button">Get new themes</a>
+                <a href="<?php echo esc_url( $evebox_fs->get_upgrade_url() ); ?>" class="eb-button">Get new themes</a>
             </p>
             <?php endif ?>
         </div>

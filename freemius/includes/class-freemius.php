@@ -1221,7 +1221,7 @@
                     $(document).ajaxSend(function (event, jqxhr, settings) {
                         if (settings.url &&
                             -1 < settings.url.indexOf('admin-ajax.php') &&
-                            ! ( settings.url.indexOf( '<?php echo $admin_param ?>' ) > 0 )
+                            ! ( settings.url.indexOf( '<?php echo esc_url( $admin_param ) ?>' ) > 0 )
                         ) {
                             if (settings.url.indexOf('?') > 0) {
                                 settings.url += '&';
@@ -1229,7 +1229,7 @@
                                 settings.url += '?';
                             }
 
-                            settings.url += '<?php echo $admin_param ?>=true';
+                            settings.url += '<?php echo esc_url( $admin_param ) ?>=true';
 
                         }
                     });
@@ -3000,8 +3000,8 @@
         static function _get_debug_log() {
             $logs = FS_Logger::load_db_logs(
                 fs_request_get( 'filters', false, 'post' ),
-                ! empty( $_POST['limit'] ) && is_numeric( $_POST['limit'] ) ? $_POST['limit'] : 200,
-                ! empty( $_POST['offset'] ) && is_numeric( $_POST['offset'] ) ? $_POST['offset'] : 0
+                ! empty( $_POST['limit'] ) && is_numeric( $_POST['limit'] ) ? absint( $_POST['limit'] ) : 200,
+                ! empty( $_POST['offset'] ) && is_numeric( $_POST['offset'] ) ? absint( $_POST['offset'] ): 0
             );
 
             self::shoot_ajax_success( $logs );

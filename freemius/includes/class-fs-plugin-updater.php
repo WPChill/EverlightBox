@@ -191,7 +191,7 @@
                 $contents
             );
 
-            echo $contents;
+            echo esc_html( $contents );
         }
 
         /**
@@ -250,7 +250,7 @@
 
             $current = get_site_transient( 'update_plugins' );
             if ( ! isset( $current->response[ $file ] ) ) {
-                echo $plugin_update_row;
+                echo esc_html( $plugin_update_row );
 
                 return;
             }
@@ -309,7 +309,7 @@
                 $plugin_update_row = str_replace( '</div>', '</div>' . $upgrade_notice_html, $plugin_update_row );
             }
 
-            echo $plugin_update_row;
+            echo esc_html( $plugin_update_row ); 
         }
 
         /**

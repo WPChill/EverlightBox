@@ -84,9 +84,9 @@ class CMB2_Type_Wysiwyg extends CMB2_Type_Textarea {
 		), $editor );
 
 		// And put the editor instance in a JS template wrapper.
-		echo '<script type="text/template" id="tmpl-cmb2-wysiwyg-' . $group_id . '-' . $field_id . '">';
+		echo '<script type="text/template" id="tmpl-cmb2-wysiwyg-' . esc_attr( $group_id ). '-' . esc_attr( $field_id ) . '">';
 		// Need to wrap the template in a wrapper div w/ specific data attributes which will be used when adding/removing rows.
-		echo '<div class="cmb2-wysiwyg-inner-wrap" data-iterator="{{ data.iterator }}" data-groupid="' . $group_id . '" data-id="' . $field_id . '" data-hash="' . $hash . '">' . $editor . '</div>';
+		echo '<div class="cmb2-wysiwyg-inner-wrap" data-iterator="{{ data.iterator }}" data-groupid="' . esc_attr( $group_id ) . '" data-id="' . esc_attr( $field_id ) . '" data-hash="' . esc_attr( $hash ) . '">' . esc_html( $editor ) . '</div>';
 		echo '</script>';
 	}
 
