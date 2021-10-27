@@ -28,9 +28,9 @@
     $action = 'deactivate_license';
 ?>
 <form action="<?php echo $fs->_get_admin_page_url( 'account' ) ?>" method="POST">
-    <input type="hidden" name="fs_action" value="<?php echo esc_attr( $action ); ?>">
+    <input type="hidden" name="fs_action" value="<?php echo $action ?>">
     <?php wp_nonce_field( trim("{$action}:{$blog_id}:{$install_id}", ':') ) ?>
-    <input type="hidden" name="install_id" value="<?php echo esc_attr( $install_id ); ?>">
-    <input type="hidden" name="blog_id" value="<?php echo esc_attr( $blog_id ); ?>">
-    <button type="button" class="fs-deactivate-license button<?php echo ! empty( $VARS['class'] ) ? ' ' . esc_attr( $VARS['class'] ): '' ?>"><?php fs_echo_inline( 'Deactivate License', 'deactivate-license', $slug ) ?></button>
+    <input type="hidden" name="install_id" value="<?php echo $install_id ?>">
+    <input type="hidden" name="blog_id" value="<?php echo $blog_id ?>">
+    <button type="button" class="fs-deactivate-license button<?php echo ! empty( $VARS['class'] ) ? ' ' . $VARS['class'] : '' ?>"><?php fs_echo_inline( 'Deactivate License', 'deactivate-license', $slug ) ?></button>
 </form>

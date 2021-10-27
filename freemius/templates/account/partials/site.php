@@ -30,16 +30,16 @@
     $trial_plan    = $fs->get_trial_plan();
     $free_text     = fs_text_inline( 'Free', 'free', $slug );
 ?>
-    <tr class="fs-site-details" data-blog-id="<?php echo esc_attr( $blog_id ); ?>"<?php if ( $is_registered ) : ?> data-install-id="<?php echo esc_attr( $install->id ); ?>"<?php endif ?>>
+    <tr class="fs-site-details" data-blog-id="<?php echo $blog_id ?>"<?php if ( $is_registered ) : ?> data-install-id="<?php echo $install->id ?>"<?php endif ?>>
         <!-- Install ID or Opt-in option -->
         <td><?php if ( $is_registered ) : ?>
                 <?php echo $install->id ?>
             <?php else : ?>
                 <?php $action = 'opt_in' ?>
                 <form action="<?php echo $fs->_get_admin_page_url( 'account' ) ?>" method="POST">
-                    <input type="hidden" name="fs_action" value="<?php echo $action; ?>">
+                    <input type="hidden" name="fs_action" value="<?php echo $action ?>">
                     <?php wp_nonce_field( trim( "{$action}:{$blog_id}", ':' ) ) ?>
-                    <input type="hidden" name="blog_id" value="<?php echo esc_attr( $blog_id ); ?>">
+                    <input type="hidden" name="blog_id" value="<?php echo $blog_id ?>">
                     <button class="fs-opt-in button button-small"><?php fs_esc_html_echo_inline( 'Opt In', 'opt-in', $slug ) ?></button>
                 </form>
             <?php endif ?>
@@ -135,7 +135,7 @@
     </tr>
 <?php if ( $is_registered ) : ?>
     <!-- More details -->
-    <tr class="fs-install-details" data-install-id="<?php echo esc_attr( $install->id ); ?>" style="display: none">
+    <tr class="fs-install-details" data-install-id="<?php echo $install->id ?>" style="display: none">
         <td colspan="5">
             <table class="widefat fs-key-value-table">
                 <tbody>
@@ -152,10 +152,10 @@
                         <!-- Toggle Usage Tracking -->
                         <?php $action = 'toggle_tracking' ?>
                         <form action="<?php echo $fs->_get_admin_page_url( 'account' ) ?>" method="POST">
-                            <input type="hidden" name="fs_action" value="<?php echo esc_attr( $action ); ?>">
+                            <input type="hidden" name="fs_action" value="<?php echo $action ?>">
                             <?php wp_nonce_field( trim( "{$action}:{$blog_id}:{$install->id}", ':' ) ) ?>
-                            <input type="hidden" name="install_id" value="<?php echo esc_attr( $install->id ); ?>">
-                            <input type="hidden" name="blog_id" value="<?php echo esc_attr( $blog_id );?>">
+                            <input type="hidden" name="install_id" value="<?php echo $install->id ?>">
+                            <input type="hidden" name="blog_id" value="<?php echo $blog_id ?>">
                             <button class="fs-toggle-tracking button button-small<?php if ( $install->is_disconnected ) {
                                 echo ' button-primary';
                             } ?>" data-is-disconnected="<?php echo $install->is_disconnected ? 'true' : 'false' ?>"><?php $install->is_disconnected ? fs_esc_html_echo_inline( 'Opt In', 'opt-in', $slug ) : fs_esc_html_echo_inline( 'Opt Out', 'opt-out', $slug ) ?></button>
@@ -317,7 +317,7 @@
                                     <form id="fs_downgrade" action="<?php echo $fs->_get_admin_page_url( 'account' ) ?>" method="POST">
                                         <input type="hidden" name="fs_action" value="<?php echo $action ?>">
                                         <?php wp_nonce_field( trim( "{$action}:{$blog_id}", ':' ) ) ?>
-                                        <input type="hidden" name="blog_id" value="<?php echo esc_attr( $blog_id ); ?>">
+                                        <input type="hidden" name="blog_id" value="<?php echo $blog_id ?>">
                                         <button class="button button-small" onclick="if (confirm('<?php echo esc_attr( $downgrade_confirmation_message . ' ' . $after_downgrade_message . ' ' . $prices_increase_text ) ?>')) { this.parentNode.submit(); } else { return false; }"><?php echo $downgrade_text ?></button>
                                     </form>
                                 <?php endif ?></td>

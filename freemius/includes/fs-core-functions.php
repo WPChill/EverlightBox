@@ -142,13 +142,13 @@
 
             switch ( $type ) {
                 case 'post':
-                    $value = isset( $_POST[ $key ] ) ? sanitize_text_field( $_POST[ $key ] ) : $def;
+                    $value = isset( $_POST[ $key ] ) ? $_POST[ $key ] : $def;
                     break;
                 case 'get':
-                    $value = isset( $_GET[ $key ] ) ? sanitize_text_field( $_GET[ $key ] ) : $def;
+                    $value = isset( $_GET[ $key ] ) ? $_GET[ $key ] : $def;
                     break;
                 default:
-                    $value = isset( $_REQUEST[ $key ] ) ? sanitize_text_field( $_REQUEST[ $key ] ) : $def;
+                    $value = isset( $_REQUEST[ $key ] ) ? $_REQUEST[ $key ] : $def;
                     break;
             }
 
@@ -393,7 +393,7 @@
 
     function fs_ui_action_link( $module_id, $page, $action, $title, $params = array() ) {
         ?><a class=""
-             href="<?php echo wp_nonce_url( freemius( $module_id )->_get_admin_page_url( $page, array_merge( $params, array( 'fs_action' => $action ) ) ), $action ) ?>"><?php echo sanitize_text_field( $title ); ?></a><?php
+             href="<?php echo wp_nonce_url( freemius( $module_id )->_get_admin_page_url( $page, array_merge( $params, array( 'fs_action' => $action ) ) ), $action ) ?>"><?php echo $title ?></a><?php
     }
 
     /*function fs_error_handler($errno, $errstr, $errfile, $errline)
@@ -782,7 +782,7 @@
          * @param string $slug
          */
         function fs_echo( $key, $slug = 'freemius' ) {
-            echo sanitize_text_field( fs_text( $key, $slug ) );
+            echo fs_text( $key, $slug );
         }
 
         /**
@@ -796,7 +796,7 @@
          * @param string $slug Module slug for overrides.
          */
         function fs_echo_inline( $text, $key = '', $slug = 'freemius' ) {
-            echo sanitize_text_field( _fs_text_inline( $text, $key, $slug ) );
+            echo _fs_text_inline( $text, $key, $slug );
         }
 
         /**
@@ -811,7 +811,7 @@
          * @param string $slug    Module slug for overrides.
          */
         function fs_echo_x_inline( $text, $context, $key = '', $slug = 'freemius' ) {
-            echo sanitize_text_field( _fs_text_x_inline( $text, $context, $key, $slug ) );
+            echo _fs_text_x_inline( $text, $context, $key, $slug );
         }
     }
 
